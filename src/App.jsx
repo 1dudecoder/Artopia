@@ -1,8 +1,11 @@
+import ConnectModel from "./component/common/connectModel/ConnectModel";
+import { WalletConnect } from "./component/index";
+
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">hello artopia</h1>
-    </>
+    <div className="">
+      <WalletConnect />
+    </div>
   );
 }
 

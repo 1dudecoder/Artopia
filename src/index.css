@@ -1,3 +1,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-custom-gradient {
+  background-image: linear-gradient(
+    330deg,
+    hsl(220deg 10% 6%) 0%,
+    hsl(220deg 10% 6%) 4%,
+    hsl(220deg 10% 6%) 8%,
+    hsl(220deg 10% 6%) 13%,
+    hsl(220deg 10% 6%) 17%,
+    hsl(220deg 10% 6%) 22%,
+    hsl(220deg 10% 6%) 26%,
+    hsl(220deg 10% 6%) 31%,
+    hsl(220deg 10% 6%) 36%,
+    hsl(220deg 10% 6%) 41%,
+    hsl(220deg 10% 6%) 46%,
+    hsl(220deg 9% 6%) 51%,
+    hsl(210deg 11% 7%) 56%,
+    hsl(204deg 12% 8%) 61%,
+    hsl(210deg 13% 9%) 65%,
+    hsl(206deg 13% 10%) 70%,
+    hsl(197deg 12% 11%) 75%,
+    hsl(188deg 13% 12%) 80%,
+    hsl(187deg 13% 13%) 85%,
+    hsl(180deg 14% 14%) 90%,
+    hsl(180deg 14% 15%) 95%,
+    hsl(175deg 15% 16%) 100%
+  );
+}
+
+.walletmodal {
+  background-image: linear-gradient(
+    325deg,
+    hsl(201deg 95% 8%) 0%,
+    hsl(212deg 91% 8%) 17%,
+    hsl(221deg 91% 9%) 42%,
+    hsl(233deg 88% 10%) 63%,
+    hsl(243deg 85% 10%) 74%,
+    hsl(254deg 82% 11%) 80%,
+    hsl(264deg 80% 12%) 84%,
+    hsl(269deg 78% 12%) 87%,
+    hsl(263deg 82% 13%) 90%,
+    hsl(257deg 85% 13%) 92%,
+    hsl(251deg 88% 13%) 93%,
+    hsl(245deg 91% 14%) 95%,
+    hsl(238deg 94% 14%) 96%,
+    hsl(232deg 97% 15%) 97%,
+    hsl(230deg 88% 17%) 97%,
+    hsl(230deg 73% 20%) 98%,
+    hsl(230deg 59% 23%) 99%,
+    hsl(230deg 44% 26%) 99%,
+    hsl(230deg 29% 29%) 99%,
+    hsl(230deg 15% 32%) 100%,
+    hsl(0deg 0% 35%) 100%
+  );
+}
