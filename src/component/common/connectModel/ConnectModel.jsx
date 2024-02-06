@@ -144,13 +144,13 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                 </div>
 
                 <div className=" text-white text-center flex flex-col items-center font-HindMadurai ">
-                  <div className="border p-8 rounded-[20px] w-[440px] max-[964px]:w-full max-[450px]:w-[96%] bg-opacity-15 bg-[#CACACA]">
+                  <div className="border p-3 rounded-[20px] w-[440px] max-[964px]:w-full max-[450px]:w-[96%] bg-opacity-15 bg-[#CACACA]">
                     <div className="">
                       <div className="flex flex-col items-center justify-center">
                         <img src={metamaskicon} alt="metamask-img" />
                         <p className="text-3xl py-2">MetaMask</p>
                         <div
-                          className="bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 w-full py-4 px-20 lg:px-32 text-center rounded-[50px] mt-6"
+                          className="bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 w-full py-2 px-20 lg:px-32 text-center rounded-[50px] mt-4 "
                           onClick={connectToMetaMask}
                         >
                           Connect
@@ -159,12 +159,12 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                     </div>
                   </div>
 
-                  <div className="border p-8 m-8 rounded-[20px] w-[440px] max-[964px]:w-full max-[450px]:w-[96%] bg-opacity-15 bg-[#CACACA]">
+                  <div className="border p-3 m-4 rounded-[20px] w-[440px] max-[964px]:w-full max-[450px]:w-[96%] bg-opacity-15 bg-[#CACACA]">
                     <div className="">
                       <div className="flex flex-col items-center justify-center">
                         <img src={walletMob} alt="wallet-mob-img" />
                         <p className="text-3xl py-2">Wallet Connect</p>
-                        <div className="bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 w-full py-4 px-20 lg:px-32 text-center rounded-[50px] mt-6">
+                        <div className="bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 w-full py-2 px-20 lg:px-32 text-center rounded-[50px] mt-4">
                           Connect
                         </div>
                       </div>
