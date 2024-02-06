@@ -1,4 +1,3 @@
-import ConnectModel from "./component/common/connectModel/ConnectModel";
 import { WalletConnect } from "./component/index";
 
 function App() {

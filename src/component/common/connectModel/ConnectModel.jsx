@@ -134,7 +134,7 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                   </p>
                 </div>
 
-                <div className="text-white min-[650px]:px-2 max-[650px]:px-10 max-[550px]:text-start max-[950px]:text-center max-[950px]:w-full w-[21.3125rem] my-10 text-start">
+                <div className="text-white min-[650px]:px-2 min-[650px]:px- max-[550px]:text-start max-[950px]:text-center max-[950px]:w-full w-[21.3125rem] my-10 text-start">
                   <p className="text-4xl font-HindMadurai">Connect Wallet</p>
                   <p className="text-base  text-start mt-1 font-popin">
                     Unlock the potential of Web3 seamlessly with MetaMask –
@@ -144,7 +144,7 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                 </div>
 
                 <div className=" text-white text-center flex flex-col items-center font-HindMadurai ">
-                  <div className="border p-8 rounded-[20px] min-[500px]:w-[440px] max-[964px]:w-full max-[450px]:w-[96%] bg-opacity-15 bg-[#CACACA]">
+                  <div className="border p-8 rounded-[20px] w-[440px] max-[964px]:w-full max-[450px]:w-[96%] bg-opacity-15 bg-[#CACACA]">
                     <div className="">
                       <div className="flex flex-col items-center justify-center">
                         <img src={metamaskicon} alt="metamask-img" />
