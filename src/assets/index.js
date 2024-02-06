@@ -4,6 +4,15 @@ import artopialogo from "../assets/walletconnect/artopialogo.png";
 import walletimg from "../assets/walletconnect/wallet.png";
 import metamaskicon from "../assets/walletmodal/metamask-icon.png";
 import walletconnecticon from "../assets/walletmodal/wallet-connect-icon.png";
+import successIcon from "../assets/walletmodal/success-icon.png";
+import walletMob from "../assets/walletmodal/wallet-mob.png";
 
-
-export { catimg, artopialogo, walletimg, walletconnecticon,metamaskicon };
+export {
+  catimg,
+  artopialogo,
+  walletimg,
+  walletconnecticon,
+  metamaskicon,
+  successIcon,
+  walletMob,
+};

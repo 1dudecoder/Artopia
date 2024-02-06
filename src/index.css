@@ -56,3 +56,12 @@
     hsl(0deg 0% 35%) 100%
   );
 }
+
+.successmodal {
+  background-image: linear-gradient(
+    45deg,
+    hsl(240deg 75% 13%) 0%,
+    hsl(258deg 61% 8%) 2%,
+    hsl(0deg 0% 4%) 100%
+  );
+}

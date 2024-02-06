@@ -1,97 +1,191 @@
 import React from "react";
-import { artopialogo, metamaskicon, walletconnecticon } from "../../../assets";
+import {
+  artopialogo,
+  metamaskicon,
+  walletconnecticon,
+  successIcon,
+  walletMob,
+} from "../../../assets";
 
-const ConnectModel = ({ isOpen, onClose }) => {
+const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
   return (
-    <div
-      className={`${
-        isOpen
-          ? "h-screen w-screen bg-cover bg-center bg-blur backdrop-blur-md absolute top-0"
-          : "hidden"
-      }`}
-    >
+    <>
       <div
         className={`${
           isOpen
-            ? "z-10 flex h-full  justify-center flex-col items-center  "
-            : "hidden "
+            ? "max-[964px]:hidden  h-screen w-screen  flex justify-center items-center flex-col bg-cover bg-center bg-blur backdrop-blur-md absolute top-0 font-HindMadurai"
+            : "hidden"
         } `}
       >
-        <div className="text-start justify-between lg:justify-start w-full h-full md:w-fit md:h-fit  md:text-center flex flex-col md:justify-center md:items-center full p-4 rounded-xl bg-custom-gradient ">
-          {" "}
-          <div>
-            <div className="flex items-center justify-start px-2 lg:px-0 md:hidden">
-              <img src={artopialogo} alt="artopia-icon" className="pr-4" />
-              <p className="text-xl text-white">Artopia</p>
-            </div>
-
-            <div className="">
-              <div className="modal-content text-white mt-10">
-                <p className="text-4xl">Connect Wallet</p>
-                <p className="text-sm px-2 py-2 mt-2">
-                  Unlock the potential of Web3 seamlessly with MetaMask – simply{" "}
-                  <br />
-                  connect in a click and elevate your digital experience to new
-                  heights.
-                </p>
-              </div>
-
-              <div className="flex flex-col md:flex-row mt-5 md:justify-center md:items-center">
-                <div className="flex flex-col justify-center items-center border-2 p-2 rounded-lg text-white bg-[#CACACA] bg-opacity-35 m-2 w-4/5">
-                  <img
-                    src={metamaskicon}
-                    alt="metamask-icon"
-                    className="pb-2"
-                  />
-                  <p className="text-base">MetaMask</p>
-                  <p className="text-xs p-2 text-center hidden md:block">
-                    Connect your wallet with your <br /> metamask account
+        <div
+          className={`${
+            isOpen ? "flex flex-col justify-center items-center" : "hidden"
+          }`}
+        >
+          {/* <div className="flex flex-col justify-center items-center"> */}
+          {!walletStatus ? (
+            <div className="w-[35.625rem] h-[28.5625rem] bg-custom-gradient text-white flex justify-center p-4 walletmodal rounded-[20px]">
+              <div className="flex flex-col text-center h-full justify-evenly">
+                <div className="">
+                  <p className="text-4xl">Connect Wallet</p>
+                  <p className="text-base font-popin">
+                    Unlock the potential of Web3 seamlessly with MetaMask –
+                    simply connect in a click and elevate your digital
+                    experience to new heights.
                   </p>
-                  <div className="bg-gradient-to-r w-full from-blue-500 to-teal-400 bg-slate-600 py-2 my-2 text-center rounded-[50px] mt-3">
-                    <p className="hidden md:block">Connect Metamask</p>
-                    <p className="block md:hidden">Connect</p>
-                  </div>
                 </div>
 
-                <div className="flex flex-col justify-center items-center border-2 p-2 rounded-lg text-white bg-[#CACACA] bg-opacity-35 m-2 w-4/5">
-                  <img
-                    src={walletconnecticon}
-                    alt="metamask-icon"
-                    className="pb-2"
-                  />
-                  <p className="text-base">MetaMask</p>
-                  <p className="text-xs p-2 hidden md:block">
-                    Connect your wallet with your <br /> wallet connect account
-                  </p>
-                  <div className="bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 w-full py-2 my-2 text-center rounded-[50px] mt-3">
-                    <p className="hidden md:block">Connect Wallet</p>
-                    <p className="block md:hidden">Connect</p>
+                <div className="flex justify-center items-center mt-10 gap-6">
+                  <div className="flex flex-col justify-evenly items-center border-2 py-4 px-3 rounded-[20px] h-[240px] bg-opacity-15 bg-[#CACACA]">
+                    <img
+                      src={metamaskicon}
+                      alt="metamask-icon"
+                      className="pb-2"
+                    />
+                    <p className="text-3xl">MetaMask</p>
+                    <p className="font-popin text-base">
+                      Connect your wallet with your <br /> metamask account
+                    </p>
+                    <div className="">
+                      <p
+                        onClick={connectToMetaMask}
+                        className="px-10 py-2 bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600  text-center rounded-[50px] mt-3 "
+                      >
+                        Connect Metamask
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-evenly items-center border-2 py-4 px-3 rounded-[20px] h-[240px] bg-opacity-15 bg-[#CACACA]">
+                    <img
+                      src={walletconnecticon}
+                      alt="metamask-icon"
+                      className=""
+                    />
+                    <p className="text-3xl">Wallet Connect</p>
+                    <p className="font-popin text-base">
+                      Connect your wallet with your <br /> wallet connect
+                      account
+                    </p>
+                    <div className="">
+                      <p className="px-10 py-2 bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 text-center rounded-[50px] mt-3">
+                        Connect Wallet
+                      </p>
+                    </div>
                   </div>
                 </div>
-
-                <p
-                  className="text-center  block md:hidden underline text-[#9E9E9E] mt-2"
-                  onClick={onClose}
-                >
-                  go back
-                </p>
               </div>
             </div>
-          </div>
-          <div className="flex  md:hidden justify-start text-[#5D5D5D] text-xs px-4 lg:px-0 place-items-end">
-            <p className="">Privacy Policy</p>
-            <p className="ml-8">Terms & Condition</p>
-          </div>
+          ) : (
+            <div className="w-[23.5625rem] h-[17.9375rem]  successmodal p-4 rounded-[20px] flex flex-col text-center text-white justify-evenly items-center z-50">
+              <img src={successIcon} alt="success-logo" />
+              <p className="font-HindMadurai text-3xl">
+                Wallet Connection Successful{" "}
+              </p>
+              <p className="text-sm text-[#9E9E9E]">
+                The wallet ending with ****637 is been successfully connected
+                with the artopia platform
+              </p>
+            </div>
+          )}
         </div>
-
         <p
-          className="underline text-[#9E9E9E] mt-2 hidden md:block "
+          className="text-base underline mt-4 text-[#dcd8d8]"
           onClick={onClose}
         >
           go back
         </p>
       </div>
-    </div>
+
+      {isOpen && walletStatus ? (
+        <div className="h-screen w-screen absolute bg-cover bg-center bg-blur backdrop-blur-md min-[964px]:hidden">
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-white min-[964px]:hidden ">
+            <div className="relative">
+              <div className="w-[23.5625rem] h-[17.9375rem] successmodal p-4 rounded-[20px] flex flex-col text-center text-white justify-evenly items-center z-50 bg-cover bg-center bg-blur backdrop-blur-md">
+                <img src={successIcon} alt="success-logo" />
+                <p className="font-HindMadurai text-3xl">
+                  Wallet Connection Successful{" "}
+                </p>
+                <p className="text-sm text-[#9E9E9E]">
+                  The wallet ending with ****637 is been successfully connected
+                  with the artopia platform
+                </p>
+              </div>
+            </div>
+            <p className="text-base mt-4" onClick={onClose}>
+              Go back
+            </p>
+          </div>
+        </div>
+      ) : (
+        <div
+          className={`${
+            isOpen
+              ? "hidden max-[964px]:block absolute w-full bg-red-100"
+              : "hidden"
+          }`}
+        >
+          <div className="bg-custom-gradient flex justify-center items-center h-full w-full px-4 ">
+            <div className="flex-1 h-screen py-4 flex flex-col justify-between ">
+              <div className="flex flex-col justify-center min-[964px]:items-start max-[964px]">
+                <div className="flex items-center px-2 lg:px-0">
+                  <img src={artopialogo} alt="artopia-icon" className="pr-4" />
+                  <p className=" text-white text-2xl font-HindMadurai">
+                    Artopia
+                  </p>
+                </div>
+
+                <div className="text-white min-[650px]:px-2 max-[650px]:px-10 max-[550px]:text-start max-[950px]:text-center max-[950px]:w-full w-[21.3125rem] my-10 text-start">
+                  <p className="text-4xl font-HindMadurai">Connect Wallet</p>
+                  <p className="text-base  text-start mt-1 font-popin">
+                    Unlock the potential of Web3 seamlessly with MetaMask –
+                    simply connect in a click and elevate your digital
+                    experience to new heights.
+                  </p>
+                </div>
+
+                <div className=" text-white text-center flex flex-col items-center font-HindMadurai ">
+                  <div className="border p-8 rounded-[20px] min-[500px]:w-[440px] max-[964px]:w-full max-[450px]:w-[96%] bg-opacity-15 bg-[#CACACA]">
+                    <div className="">
+                      <div className="flex flex-col items-center justify-center">
+                        <img src={metamaskicon} alt="metamask-img" />
+                        <p className="text-3xl py-2">MetaMask</p>
+                        <div
+                          className="bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 w-full py-4 px-20 lg:px-32 text-center rounded-[50px] mt-6"
+                          onClick={connectToMetaMask}
+                        >
+                          Connect
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="border p-8 m-8 rounded-[20px] w-[440px] max-[964px]:w-full max-[450px]:w-[96%] bg-opacity-15 bg-[#CACACA]">
+                    <div className="">
+                      <div className="flex flex-col items-center justify-center">
+                        <img src={walletMob} alt="wallet-mob-img" />
+                        <p className="text-3xl py-2">Wallet Connect</p>
+                        <div className="bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 w-full py-4 px-20 lg:px-32 text-center rounded-[50px] mt-6">
+                          Connect
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="underline text-[#9E9E9E] pt-3 font-popin">
+                    Go back
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex justify-start text-[#5D5D5D] text-xs px-4 lg:px-0 font-popin">
+                <p className="">Privacy Policy</p>
+                <p className="ml-8">Terms & Condition</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
