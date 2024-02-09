@@ -1,79 +1,104 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { catimg, walletimg, artopialogo } from "../../assets";
 import ConnectModel from "../common/connectModel/ConnectModel";
+import { ethers } from "ethers";
 
 function WalletConnect() {
   const [openWalletModal, setOpenWalletModal] = useState(false);
+
+  const [connected, setConnected] = useState(false);
+  const [address, setAddress] = useState("");
+  const [error, setError] = useState(null);
+
+  async function connectToMetaMask() {
+    try {
+      await window.ethereum.request({ method: "eth_requestAccounts" });
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const connectedAddress = await signer.getAddress();
+      setAddress(connectedAddress);
+      setConnected(true);
+      setError(null);
+      console.log("MetaMask connected");
+    } catch (error) {
+      setError("Failed to connect to MetaMask.");
+      setConnected(false);
+    }
+  }
 
   const handlewalletModal = () => {
     setOpenWalletModal(!openWalletModal);
   };
 
+  useEffect(() => {
+    console.log(connected, connected, error, address, "connected---");
+  }, [connected, error, address]);
+
   return (
-    <div className="bg-custom-gradient">
-      <div className="h-screen flex justify-center items-center md:px-4 md:py-4">
-        <div className="flex flex-col justify-between h-screen md:w-1/2 py-6 pr-2">
-          <div>
+    <>
+      <div className="bg-custom-gradient flex justify-center items-center h-full w-full px-5 ">
+        <div className="flex-1 h-screen py-4 flex flex-col justify-between ">
+          <div className="flex flex-col justify-center min-[964px]:items-start max-[964px]">
             <div className="flex items-center px-2 lg:px-0">
               <img src={artopialogo} alt="artopia-icon" className="pr-4" />
-              <p className="text-xl text-white ">Artopia</p>
+              <p className=" text-white text-2xl font-HindMadurai">Artopia</p>
             </div>
 
-            <div className="mt-14 flex flex-col justify-center items-center sm:justify-start lg:items-start">
-              <div className="md:w-[20.6875rem] text-center px-4 md:text-start ">
-                <p className="text-[40px] text-white font-bold">
-                  Connect Wallet
-                </p>
-                <p className="text-sm text-white">
-                  Unlock the potential of Web3 seamlessly with MetaMask – simply
-                  connect in a click and elevate your digital experience to new
-                  heights.
-                </p>
-              </div>
+            <div className="text-white max-[550px]:text-start max-[950px]:text-center max-[950px]:w-full w-[21.3125rem] my-10 text-start">
+              <p className="text-4xl font-HindMadurai">Connect Wallet</p>
+              <p className="text-base  text-start mt-1 font-popin">
+                Unlock the potential of Web3 seamlessly with MetaMask – simply
+                connect in a click and elevate your digital experience to new
+                heights.
+              </p>
+            </div>
 
-              <div className="w-fit text-center">
-                <div className="flex lg:justify-center flex-col items-start ">
-                  <div className="p-4 md:p-6 border w-fit mt-8 rounded-[20px] bg-[#5D5D5D] bg-opacity-20">
-                    <div className="text-white  flex flex-col items-center text-center ">
-                      <img src={walletimg} alt="wallet-img" />
-                      <p className="text-2xl mt-4 font-bold">Connect wallet</p>
-                      <p className="text-sm ">
-                        By clicking the connect you will add the <br /> wallet
-                        to the artopia system.{" "}
-                      </p>
+            <div className=" text-white text-center flex flex-col items-center font-HindMadurai ">
+              <div className="border p-8 rounded-[20px] w-[440px] max-[964px]:w-full max-[450px]:w-[95%] bg-opacity-15 bg-[#CACACA] ">
+                <div className="">
+                  <div className="flex flex-col items-center justify-center">
+                    <img src={walletimg} alt="wallet-img" />
+                    <p className="text-3xl">Connect wallet</p>
+                    <p className="text-base font-popin">
+                      By clicking the connect you will add the <br /> wallet to
+                      the artopia system.{" "}
+                    </p>
 
-                      <div
-                        className="bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 w-full py-4 px-20 lg:px-32 text-center rounded-[50px] mt-6"
-                        onClick={handlewalletModal}
-                      >
-                        Connect Wallet
-                      </div>
+                    <div
+                      className=" cursor-pointer bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 w-full py-4 px-20 lg:px-32 text-center rounded-[50px] mt-6"
+                      onClick={handlewalletModal}
+                    >
+                      Connect Wallet
                     </div>
                   </div>
                 </div>
-
-                <p className="underline text-[#9E9E9E] pt-3">Go back</p>
               </div>
+      
             </div>
           </div>
 
-          <div className="flex justify-start text-[#5D5D5D] text-xs px-4 lg:px-0">
+          <div className="flex justify-start text-[#5D5D5D] text-xs px-4 lg:px-0 font-popin">
             <p className="">Privacy Policy</p>
             <p className="ml-8">Terms & Condition</p>
           </div>
         </div>
 
-        <div className="h-full justify-center ml-2 items-center bg-red-200 w-fit rounded-[20px] overflow-hidden hidden md:flex">
+        <div className="h-screen flex-1 p-4 lg:pr-2 hidden min-[964px]:block ">
           <img
             src={catimg}
             alt="cat-img"
-            className="w-full h-full object-cover scale-100"
+            className="w-full h-full object-cover rounded-[20px]"
           />
         </div>
-      </div>
 
-      <ConnectModel isOpen={openWalletModal} onClose={handlewalletModal} />
-    </div>
+        <ConnectModel
+          isOpen={openWalletModal}
+          onClose={handlewalletModal}
+          connectToMetaMask={connectToMetaMask}
+          walletStatus={connected}
+        />
+      </div>
+    </>
   );
 }
 

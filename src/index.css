@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
 .bg-custom-gradient {
   background-image: linear-gradient(
     330deg,
@@ -55,4 +61,22 @@
     hsl(230deg 15% 32%) 100%,
     hsl(0deg 0% 35%) 100%
   );
+}
+
+.successmodal {
+  background-image: linear-gradient(
+    45deg,
+    hsl(240deg 75% 13%) 0%,
+    hsl(258deg 61% 8%) 2%,
+    hsl(0deg 0% 4%) 100%
+  );
+}
+
+.border-gradient-gray-to-blue {
+  border-image: linear-gradient(to right, #718096, #4a90e2) 1;
+  border-image-slice: 1;
+}
+
+::-webkit-scrollbar {
+  width: 0px; /* Width of the scrollbar */
 }
