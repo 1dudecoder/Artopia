@@ -1,17 +1,14 @@
 import React, { useState } from "react";
 import {
-
   artopialogo,
   metamaskicon,
   walletconnecticon,
   successIcon,
   walletMob,
-   remove ,
-
+  remove,
 } from "../../../assets";
 
 const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
-  
   return (
     <>
       <div
@@ -31,9 +28,14 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
             <div className="w-[35.625rem] h-[28.5625rem] bg-custom-gradient text-white flex justify-center p-4 walletmodal rounded-[20px]">
               <div className="flex flex-col text-center h-full justify-evenly">
                 <div className="mb-2 w-[498px] h-[99px] mt-[-12px]">
-                   <div className="flex w-20px flex-row-reverse  " >
-                    <img src={remove} alt="remove-btn" className="cursor-pointer h-7"  onClick={onClose} />
-                   </div>
+                  <div className="flex w-20px flex-row-reverse  ">
+                    <img
+                      src={remove}
+                      alt="remove-btn"
+                      className="cursor-pointer h-7"
+                      onClick={onClose}
+                    />
+                  </div>
                   <p className="text-4xl mt-[-27px] mb-2">Connect Wallet</p>
                   <p className="text-base font-popin ">
                     Unlock the potential of Web3 seamlessly with MetaMask –
@@ -43,8 +45,7 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                 </div>
 
                 <div className="flex justify-center items-center mt-6 gap-6">
-                <div
-                    className='flex flex-col justify-evenly items-center py-4 px-3 rounded-[20px] h-[240px] bg-opacity-15 bg-[#CACACA] hover:border-2 ' > 
+                  <div className="flex flex-col justify-evenly items-center py-4 px-3 rounded-[20px] h-[240px] bg-opacity-15 bg-[#CACACA] hover:border-2 hover: ">
                     <img
                       src={metamaskicon}
                       alt="metamask-icon"
@@ -63,8 +64,7 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                       </p>
                     </div>
                   </div>
-                  <div
-      className='flex flex-col justify-evenly items-center py-4 px-3 rounded-[20px] h-[240px] bg-opacity-15 bg-[#CACACA] hover:border-2' > 
+                  <div className="flex flex-col justify-evenly items-center py-4 px-3 rounded-[20px] h-[240px] bg-opacity-15 bg-[#CACACA] hover:border-2">
                     <img
                       src={walletconnecticon}
                       alt="metamask-icon"
@@ -77,7 +77,7 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                     </p>
                     <div className="">
                       <p className="px-10 py-2 bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 text-center rounded-[50px] mt-3 cursor-pointer">
-                        Connect Wallet
+                        <p className="text-[18px] ">Connect Wallet</p>
                       </p>
                     </div>
                   </div>
@@ -85,49 +85,55 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
               </div>
             </div>
           ) : (
-            <div className="w-[23.5625rem] h-[17.9375rem] successmodal p-4 rounded-[20px] flex flex-col text-white z-50">
-            <div className="flex justify-end">
-              <img src={remove} alt="remove-btn" className="cursor-pointer h-6" onClick={onClose} />
+            <div className="w-[23.5625rem] h-[17.9375rem] bg-[#1E1E1E] p-4 rounded-[20px] flex flex-col text-white z-50">
+              <div className="flex justify-end">
+                <img
+                  src={remove}
+                  alt="remove-btn"
+                  className="cursor-pointer h-6"
+                  onClick={onClose}
+                />
+              </div>
+              <div className="flex flex-col text-center items-center justify-evenly">
+                <img src={successIcon} alt="success-logo" />
+                <p className="font-HindMadurai text-3xl mb-2">
+                  Wallet Connection Successful
+                </p>
+                <p className="text-sm text-[#9E9E9E] w-[329px] h-[40px]">
+                  The wallet ending with ****637 is successfully connected with
+                  the Artopia platform
+                </p>
+              </div>
             </div>
-            <div className="flex flex-col text-center items-center justify-evenly">
-              <img src={successIcon} alt="success-logo" />
-              <p className="font-HindMadurai text-3xl mb-2">
-                Wallet Connection Successful
-              </p>
-              <p className="text-sm text-[#9E9E9E] w-[329px] h-[40px]">
-                The wallet ending with ****637 is successfully connected with the Artopia platform
-              </p>
-            </div>
-          </div>
-          
           )}
-           
         </div>
-    
       </div>
 
       {isOpen && walletStatus ? (
-     <div className="h-screen w-screen absolute bg-cover bg-center bg-blur backdrop-blur-md min-[964px]:hidden ">
-     <div className="absolute inset-0 flex flex-col justify-center items-center text-white min-[964px]:hidden ">
-       
-       <div className="relative">   
-         <div className="w-[23.5625rem] h-[17.9375rem] successmodal p-4 rounded-[20px] flex flex-col text-center text-white justify-evenly items-center z-50 bg-cover bg-center bg-blur backdrop-blur-md">
-           <div className="absolute top-4 right-4">
-             <img src={remove} alt="remove-btn" className="cursor-pointer h-6" onClick={onClose} />
-           </div>
-           <img src={successIcon} alt="success-logo" />
-           <p className="font-HindMadurai text-3xl">
-             Wallet Connection Successful
-           </p>
-           <p className="text-sm text-[#9E9E9E] w-[329px] h-[40px] ">
-             The wallet ending with ****637 is successfully connected with the Artopia platform
-           </p>
-         </div>
-       </div>
-     
-     </div>
-   </div>
-   
+        <div className="h-screen w-screen absolute bg-cover bg-center bg-blur backdrop-blur-md min-[964px]:hidden ">
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-white min-[964px]:hidden ">
+            <div className="relative">
+              <div className="w-[23.5625rem] h-[17.9375rem] bg-[#1E1E1E] p-4 rounded-[20px] flex flex-col text-center text-white justify-evenly items-center z-50 bg-cover bg-center bg-blur backdrop-blur-md">
+                <div className="absolute top-4 right-4">
+                  <img
+                    src={remove}
+                    alt="remove-btn"
+                    className="cursor-pointer h-6"
+                    onClick={onClose}
+                  />
+                </div>
+                <img src={successIcon} alt="success-logo" />
+                <p className="font-HindMadurai text-3xl">
+                  Wallet Connection Successful
+                </p>
+                <p className="text-sm text-[#9E9E9E] w-[329px] h-[40px] ">
+                  The wallet ending with ****637 is successfully connected with
+                  the Artopia platform
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       ) : (
         <div
           className={`${
@@ -146,7 +152,7 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                   </p>
                 </div>
 
-                <div className="text-white min-[650px]:px-2 min-[650px]:px- max-[550px]:text-start max-[950px]:text-center max-[950px]:w-full  w-[21.3125rem] my-10 text-start">
+                <div className="text-white min-[650px]:px-2 min-[650px]:px max-[550px]:text-start max-[950px]:text-center max-[950px]:w-full  w-[21.3125rem] my-4 text-start">
                   <p className="text-4xl font-HindMadurai">Connect Wallet</p>
                   <p className="text-base  text-start mt-1 font-popin ">
                     Unlock the potential of Web3 seamlessly with MetaMask –
@@ -156,7 +162,7 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                 </div>
 
                 <div className=" text-white text-center flex flex-col items-center font-HindMadurai ">
-                  <div className="border p-3 rounded-[20px] w-[440px] max-[964px]:w-full max-[450px]:w-[96%] bg-opacity-15 bg-[#CACACA]">
+                  <div className="hover:border p-3 rounded-[20px] w-[440px] max-[964px]:w-full max-[450px]:w-[96%] bg-opacity-15 bg-[#CACACA] p-3 rounded-[20px] w-[440px] max-[964px]:w-full max-[450px]:w-[96%] bg-opacity-15 bg-[#CACACA]">
                     <div className="">
                       <div className="flex flex-col items-center justify-center">
                         <img src={metamaskicon} alt="metamask-img" />
@@ -171,7 +177,7 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                     </div>
                   </div>
 
-                  <div className="border p-3 m-4 rounded-[20px] w-[440px] max-[964px]:w-full max-[450px]:w-[96%] bg-opacity-15 bg-[#CACACA]">
+                  <div className="hover:border p-3 m-2 rounded-[20px] w-[440px] max-[964px]:w-full max-[450px]:w-[96%] bg-opacity-15 bg-[#CACACA]">
                     <div className="">
                       <div className="flex flex-col items-center justify-center">
                         <img src={walletMob} alt="wallet-mob-img" />
@@ -182,8 +188,11 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                       </div>
                     </div>
                   </div>
-                  <p className="underline text-[#9E9E9E] pt-3 font-popin"  onClick={onClose} >
-                    Go back 
+                  <p
+                    className="underline text-[#9E9E9E] font-popin"
+                    onClick={onClose}
+                  >
+                    Go back
                   </p>
                 </div>
               </div>

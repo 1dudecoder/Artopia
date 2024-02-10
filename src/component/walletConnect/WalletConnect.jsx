@@ -32,7 +32,7 @@ function WalletConnect() {
 
   useEffect(() => {
     console.log(connected, connected, error, address, "connected---");
-  }, [connected, error, address]);
+  }, [connected, error, address, openWalletModal]);
 
   return (
     <>
@@ -53,8 +53,8 @@ function WalletConnect() {
               </p>
             </div>
 
-            <div className=" text-white text-center flex flex-col items-center font-HindMadurai ">
-              <div className="border p-8 rounded-[20px] w-[440px] max-[964px]:w-full max-[450px]:w-[95%] bg-opacity-15 bg-[#CACACA] ">
+            <div className="  text-white text-center flex flex-col items-center font-HindMadurai ">
+              <div className="hover:border p-8 rounded-[20px] w-[440px] max-[964px]:w-full max-[450px]:w-[95%] bg-opacity-15 bg-[#CACACA] ">
                 <div className="">
                   <div className="flex flex-col items-center justify-center">
                     <img src={walletimg} alt="wallet-img" />
@@ -68,12 +68,11 @@ function WalletConnect() {
                       className=" cursor-pointer bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 w-full py-4 px-20 lg:px-32 text-center rounded-[50px] mt-6"
                       onClick={handlewalletModal}
                     >
-                      Connect Wallet
+                      <p className="text-nowrap">Connect Wallet</p>
                     </div>
                   </div>
                 </div>
               </div>
-      
             </div>
           </div>
 

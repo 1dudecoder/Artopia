@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   artopialogo,
+  dashhide,
   disconnecticon,
+  downarrow,
   girlimg,
   helpicon,
   hideBar,
   historyicon,
   homeicon,
-  imggen,
   imgicon,
   loadingicon,
   profileicon,
@@ -16,191 +17,215 @@ import {
   walleticon,
 } from "../../assets";
 import ImageButton from "../common/image-button/ImageButton";
-import History from "../history/History";
 import ImageSearch from "../Image-search/ImageSearch";
 import { useLocation, useRoutes } from "react-router-dom";
+import History from "../historyCompo/History";
 
 function Dasboard() {
   const loction = useLocation();
 
-  console.log(loction.pathname, "loction---");
+  const [barHide, setBarHide] = useState(false);
 
   function handledashboard() {
     console.log(loction.pathname, "path-----");
+
     if (loction.pathname == "/dashboard") {
-      return (
-        <>
-          <div className="w-[100%] text-white  overflow-auto font-HindMadurai">
-            <ImageSearch />
-          </div>
-        </>
-      );
+      return <ImageSearch />;
     }
 
     if (loction.pathname == "/history") {
-      return (
-        <>
-          <div className="w-[100%]  text-white  overflow-auto font-HindMadurai">
-            <History />
-          </div>
-        </>
-      );
+      return <History />;
     }
   }
 
-  return (
-    <>
-      <div className="h-screen w-screen bg-custom-gradient flex font-HindMadurai ">
-        <div className="w-[300px] h-[screen] flex flex-col justify-between  items-center bg-[#5d5d5d26]  backdrop-filter backdrop-blur-lg">
-          <div className="flex flex-col justify-between h-full items-center p-4">
-            <div className="flex flex-col ">
-              <div className="flex justify-center ">
-                <div className="flex justify-between item-center  w-full">
-                  <div className="flex justify-center items-center">
-                    <img
-                      src={artopialogo}
-                      alt="artopia-icon"
-                      className="pr-4 h-4"
-                    />
-                    <p className=" text-white text-2xl font-HindMadurai">
-                      Artopia
-                    </p>
-                  </div>
+  const handledashbar = () => {
+    setBarHide(!barHide);
+  };
 
-                  <div className={"flex justify-center items-center"}>
-                    <img src={hideBar} alt={"hide-bar"} className="h-3" />
+  const SidebarItem = () => {
+    return (
+      <div className="flex flex-col justify-between h-full items-center p-4 ">
+        <div className="flex flex-col ">
+          <div className="flex justify-center ">
+            <div className="flex justify-between item-center  w-full">
+              <div className="flex justify-center items-center">
+                <img
+                  src={artopialogo}
+                  alt="artopia-icon"
+                  className="pr-4 h-4"
+                />
+                <p className=" text-white text-2xl font-HindMadurai">Artopia</p>
+              </div>
+
+              <div
+                className={"flex justify-center items-center"}
+                onClick={handledashbar}
+              >
+                <img src={hideBar} alt={"hide-bar"} className="h-3" />
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <div className="text-white ">
+              <p className=" text-[#9E9E9E] text-base mb-3">Balance</p>
+              <div className="flex justify-between">
+                <div className="flex justify-start">
+                  <img src={loadingicon} alt="loading-icons" className="h-6" />
+                  <p className="font-[22.04px] pl-2  pr-10">3,000</p>
+                </div>
+
+                <div className="border flex justify-center items-center border-none  p-[0.70px] rounded-full whitespace-nowrap bg-gradient-to-r from-cyan-500 to-blue-500">
+                  <div className="bg-[#393434] px-[0.3rem] py-[0.1rem]  rounded-full ">
+                    <p className="text-sm whitespace-nowrap p-[0.1rem]">
+                      Buy More
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6">
-                <div className="text-white ">
-                  <p className=" text-[#9E9E9E] text-base mb-3">Balance</p>
-                  <div className="flex justify-between">
-                    <div className="flex justify-start">
-                      <img
-                        src={loadingicon}
-                        alt="loading-icons"
-                        className="h-6"
-                      />
-                      <p className="font-[22.04px] pl-2  pr-10">3,000</p>
-                    </div>
+              <p className="text-sm underline text-[#BDBDBD] mt-[5%]">
+                Guidelines
+              </p>
+            </div>
 
-                    <div className="border px-2 py-[0.10rem] rounded-full whitespace-nowrap">
-                      <p className="text-sm padding whitespace-nowrap">
-                        Buy More
-                      </p>
-                    </div>
-                  </div>
-
-                  <p className="text-sm underline text-[#BDBDBD] mt-[5%]">
-                    Guidelines
-                  </p>
+            <div className="text-white mt-4  text-start">
+              <p className="text-[#9E9E9E] text-base  mt-[5%]">Start Here</p>
+              <div className="flex flex-col">
+                <div className="flex justify-start mt-3">
+                  <ImageButton icon={homeicon} text={"Home"} size={"base"} />
                 </div>
-
-                <div className="text-white mt-4  text-start">
-                  <p className="text-[#9E9E9E] text-base  mt-[5%]">
-                    Start Here
-                  </p>
-                  <div className="flex flex-col">
-                    <div className="flex justify-start mt-3">
-                      <ImageButton
-                        icon={homeicon}
-                        text={"Home"}
-                        size={"base"}
-                      />
-                    </div>
-                    <div className="flex justify-start mt-5">
-                      <ImageButton
-                        icon={historyicon}
-                        text={"History"}
-                        size={"base"}
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-white mt-4 text-start">
-                  <p className="text-[#9E9E9E] text-base mt-3">Tools</p>
-                  <div className="flex flex-col">
-                    <div className="flex justify-start mt-3">
-                      <ImageButton
-                        icon={textimg}
-                        text={"Text to Image"}
-                        size={"base"}
-                      />
-                    </div>
-                    <div className="flex justify-start mt-5">
-                      <ImageButton
-                        icon={imgicon}
-                        text={"Image to Image"}
-                        size={"base"}
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-white mt-4  text-start">
-                  <p className="text-[#9E9E9E] text-base mt-3">More Option</p>
-                  <div className="flex flex-col">
-                    <div className="flex justify-start mt-5">
-                      <ImageButton
-                        icon={profileicon}
-                        text={"Profile"}
-                        size={"base"}
-                      />
-                    </div>
-                    <div className="flex justify-start mt-3">
-                      <ImageButton
-                        icon={helpicon}
-                        text={"help"}
-                        size={"base"}
-                      />
-                    </div>
-                    <div className="flex justify-start mt-5">
-                      <ImageButton
-                        icon={settingicon}
-                        text={"Setting"}
-                        size={"base"}
-                      />
-                    </div>
-                  </div>
+                <div className="flex justify-start mt-5">
+                  <ImageButton
+                    icon={historyicon}
+                    text={"History"}
+                    size={"base"}
+                  />
                 </div>
               </div>
             </div>
 
-            <div className="text-white flex  justify-start items-center w-full text-ellipsis">
-              <div className="flex flex-col w-fit justify-center">
-                <div className="flex  justify-center">
-                  <img src={girlimg} alt="girl-img" />
-
-                  <div className="ml-4">
-                    <p className="text-[16px]">Justin Barboe</p>
-
-                    <div className="flex pr-4">
-                      <img src={walleticon} alt="wallet-icon" />
-                      <p className="pl-2 text-[12px] text-ellipsis w-full">
-                        0x168v37...
-                      </p>
-                    </div>
-                  </div>
+            <div className="text-white mt-4 text-start">
+              <p className="text-[#9E9E9E] text-base mt-3">Tools</p>
+              <div className="flex flex-col">
+                <div className="flex justify-start mt-3">
+                  <ImageButton
+                    icon={textimg}
+                    text={"Text to Image"}
+                    size={"base"}
+                  />
                 </div>
+                <div className="flex justify-start mt-5">
+                  <ImageButton
+                    icon={imgicon}
+                    text={"Image to Image"}
+                    size={"base"}
+                  />
+                </div>
+              </div>
+            </div>
 
-                <div className="flex justify-start w-full mt-2">
-                  <p className="text-[#E33629] mr-2 text-sm">Disconnect</p>
-                  <div>
-                    <img
-                      src={disconnecticon}
-                      alt="disconnect-icon"
-                      className="h-fit w-fit"
-                    />
-                  </div>
+            <div className="text-white mt-4  text-start">
+              <p className="text-[#9E9E9E] text-base mt-3">More Option</p>
+              <div className="flex flex-col">
+                <div className="flex justify-start mt-5">
+                  <ImageButton
+                    icon={profileicon}
+                    text={"Profile"}
+                    size={"base"}
+                  />
+                </div>
+                <div className="flex justify-start mt-3">
+                  <ImageButton icon={helpicon} text={"help"} size={"base"} />
+                </div>
+                <div className="flex justify-start mt-5">
+                  <ImageButton
+                    icon={settingicon}
+                    text={"Setting"}
+                    size={"base"}
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        {handledashboard()}
+
+        <div className="text-white flex  justify-start items-center w-full text-ellipsis">
+          <div className="flex flex-col w-fit justify-center">
+            <div className="flex items-center  justify-center">
+              <img src={girlimg} alt="girl-img" className="h-auto w-auto" />
+
+              <div className="ml-4">
+                <p className="text-[16px]">Justin Barboe</p>
+
+                <div className="flex pr-4">
+                  <img src={walleticon} alt="wallet-icon" />
+                  <p className="pl-2 text-[12px] text-ellipsis w-full">
+                    0x168v37...
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-start w-full mt-2">
+              <p className="text-[#E33629] mr-2 text-sm">Disconnect</p>
+              <div>
+                <img
+                  src={disconnecticon}
+                  alt="disconnect-icon"
+                  className="h-fit w-fit"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <>
+      <div className="h-screen w-screen bg-custom-gradient flex font-HindMadurai ">
+        <div className="hidden sm:flex">
+          <SidebarItem />
+        </div>
+        <div className="flex sm:hidden">
+          <div
+            className={`flex z-10 bg-custom-gradient h-full absolute transition-transform duration-300 ${
+              barHide ? "translate-x-0" : "-translate-x-full"
+            }`}
+          >
+            <SidebarItem />
+          </div>
+        </div>
+
+        <div className="w-[100%]  text-white  overflow-auto font-HindMadurai">
+          <div className="flex sm:hidden w-full justify-between py-4 px-4">
+            <div className="flex justify-center items-center">
+              <img src={artopialogo} alt="artopia-icon" className="pr-4 h-4" />
+              <p className=" text-white text-2xl font-HindMadurai">Artopia</p>
+            </div>
+            <div className="flex items-center">
+              <div className="border-2 border-[#9e9e9e5b] py-1 px-4 rounded-[20px] flex  items-center justify-between">
+                <div className="flex justify-center items-center pr-1">
+                  <img src={girlimg} alt="girl-img" className="h-6" />
+                </div>
+                <div className="flex  items-center ">
+                  <p className="pr-2 text-sm text-[#F4F4F4]">Justin</p>
+                  <img src={downarrow} alt="downarrow-icon" className="h-3" />
+                </div>
+              </div>
+
+              <div
+                className="text-white ml-2 p-2 py-3 rounded-full border-[#f4f4f458] border-2"
+                onClick={handledashbar}
+              >
+                <img src={dashhide} alt="dash-hide" />
+              </div>
+            </div>
+          </div>
+          {handledashboard()}
+        </div>
       </div>
     </>
   );

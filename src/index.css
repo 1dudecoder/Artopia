@@ -77,6 +77,13 @@
   border-image-slice: 1;
 }
 
+
+
+.borderblue {
+  border-image: linear-gradient(to right, #718096, #4a90e2) 1;
+  border-image-slice: 1;
+}
+
 ::-webkit-scrollbar {
   width: 0px; /* Width of the scrollbar */
 }
