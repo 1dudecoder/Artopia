@@ -113,7 +113,7 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
         <div className="h-screen w-screen absolute bg-cover bg-center bg-blur backdrop-blur-md min-[964px]:hidden ">
           <div className="absolute inset-0 flex flex-col justify-center items-center text-white min-[964px]:hidden ">
             <div className="relative">
-              <div className="w-[23.5625rem] h-[17.9375rem] bg-[#1E1E1E] p-4 rounded-[20px] flex flex-col text-center text-white justify-evenly items-center z-50 bg-cover bg-center bg-blur backdrop-blur-md">
+              <div className="w-full  sm:w-[23.5625rem]  h-[17.9375rem] bg-[#1E1E1E] p-4 rounded-[20px] flex flex-col text-center text-white justify-evenly items-center z-50 bg-cover bg-center bg-blur backdrop-blur-md">
                 <div className="absolute top-4 right-4">
                   <img
                     src={remove}
