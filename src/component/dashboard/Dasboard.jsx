@@ -44,7 +44,7 @@ function Dasboard() {
 
   const SidebarItem = () => {
     return (
-      <div className="flex flex-col justify-between h-full items-center p-4 ">
+      <div className="flex flex-col justify-between h-full items-center py-4 px-2 ">
         <div className="flex flex-col ">
           <div className="flex justify-center ">
             <div className="flex justify-between item-center  w-full">
@@ -61,7 +61,7 @@ function Dasboard() {
                 className={"flex justify-center items-center"}
                 onClick={handledashbar}
               >
-                <img src={hideBar} alt={"hide-bar"} className="h-3" />
+                <img src={hideBar} alt={"hide-bar"} className="h-3 px-2" />
               </div>
             </div>
           </div>
@@ -75,11 +75,9 @@ function Dasboard() {
                   <p className="font-[22.04px] pl-2  pr-10">3,000</p>
                 </div>
 
-                <div className="border flex justify-center items-center border-none  p-[0.70px] rounded-full whitespace-nowrap bg-gradient-to-r from-cyan-500 to-blue-500">
-                  <div className="bg-[#393434] px-[0.3rem] py-[0.1rem]  rounded-full ">
-                    <p className="text-sm whitespace-nowrap p-[0.1rem]">
-                      Buy More
-                    </p>
+                <div className="border flex justify-center items-center border-none  p-[0.70px] rounded-full whitespace-nowrap bg-gradient-to-r from-cyan-500 to-blue-500 ">
+                  <div class="px-2 py-1 rounded-full bg-[#000000ac]">
+                    <p class="text-sm font-popin">Buy More</p>
                   </div>
                 </div>
               </div>
@@ -89,7 +87,7 @@ function Dasboard() {
               </p>
             </div>
 
-            <div className="text-white mt-4  text-start">
+            <div className="text-white mt-6  text-start">
               <p className="text-[#9E9E9E] text-base  mt-[5%]">Start Here</p>
               <div className="flex flex-col">
                 <div className="flex justify-start mt-3">
@@ -161,7 +159,7 @@ function Dasboard() {
                 <div className="flex pr-4">
                   <img src={walleticon} alt="wallet-icon" />
                   <p className="pl-2 text-[12px] text-ellipsis w-full">
-                    0x168v37...
+                    0x168v3712g...
                   </p>
                 </div>
               </div>
@@ -186,13 +184,15 @@ function Dasboard() {
   return (
     <>
       <div className="h-screen w-screen bg-custom-gradient flex font-HindMadurai ">
-        <div className="hidden sm:flex">
+        <div className="hidden sm:flex w-[250px]  justify-end bg-[#5d5d5d26]  backdrop-filter backdrop-blur-sm pl-6 border-e-[0.2px] border-[#f4f4f447]">
           <SidebarItem />
         </div>
-        <div className="flex sm:hidden">
+        <div className="flex sm:hidden backdrop-filter backdrop-blur-sm z-10 ">
           <div
-            className={`flex z-10 bg-custom-gradient h-full absolute transition-transform duration-300 ${
-              barHide ? "translate-x-0" : "-translate-x-full"
+            className={`flex z-10 bg-custom-gradient h-full absolute transition-transform duration-300 justify-center items-center ${
+              barHide
+                ? "translate-x-0  w-[250px]  border-e-[0.2px] border-[#f4f4f447]"
+                : "-translate-x-full"
             }`}
           >
             <SidebarItem />

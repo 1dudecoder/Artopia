@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { catimg, walletimg, artopialogo } from "../../assets";
 import ConnectModel from "../common/connectModel/ConnectModel";
 import { ethers } from "ethers";
+import { useNavigate } from "react-router-dom";
 
 function WalletConnect() {
   const [openWalletModal, setOpenWalletModal] = useState(false);
-
   const [connected, setConnected] = useState(false);
   const [address, setAddress] = useState("");
   const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
 
   async function connectToMetaMask() {
     try {
@@ -32,12 +34,18 @@ function WalletConnect() {
 
   useEffect(() => {
     console.log(connected, connected, error, address, "connected---");
+
+    if (connected) {
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 2000);
+    }
   }, [connected, error, address, openWalletModal]);
 
   return (
     <>
       <div className="bg-custom-gradient flex justify-center items-center h-full w-full px-5 ">
-        <div className="flex-1 h-screen py-4 flex flex-col justify-between ">
+        <div className=" h-screen py-4 flex flex-col justify-between md:px-4 lg:w-[45%]">
           <div className="flex flex-col justify-center min-[964px]:items-start max-[964px]">
             <div className="flex items-center px-2 lg:px-0">
               <img src={artopialogo} alt="artopia-icon" className="pr-4" />
@@ -53,7 +61,7 @@ function WalletConnect() {
               </p>
             </div>
 
-            <div className="  text-white text-center flex flex-col items-center font-HindMadurai ">
+            <div className="  text-white text-center flex flex-col items-center font-HindMadurai md:pr-2">
               <div className="hover:border p-8 rounded-[20px] w-[440px] max-[964px]:w-full max-[450px]:w-[95%] bg-opacity-15 bg-[#CACACA] ">
                 <div className="">
                   <div className="flex flex-col items-center justify-center">
@@ -79,13 +87,13 @@ function WalletConnect() {
             </div>
           </div>
 
-          <div className="flex justify-start text-[#5D5D5D] text-xs px-4 lg:px-0 font-popin">
+          <div className="flex justify-start text-[#5D5D5D] text-xs px-4 lg:px-0 font-popin lg:w-[55%] mr-2">
             <p className="">Privacy Policy</p>
             <p className="ml-8">Terms & Condition</p>
           </div>
         </div>
 
-        <div className="h-screen flex-1 p-4 lg:pr-2 hidden min-[964px]:block ">
+        <div className="h-screen  py-4  hidden min-[964px]:block w-[60%] px-2">
           <img
             src={catimg}
             alt="cat-img"

@@ -143,7 +143,7 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
           }`}
         >
           <div className="bg-custom-gradient flex justify-center items-center h-full w-full px-4 ">
-            <div className="flex-1 h-screen py-4 flex flex-col justify-between ">
+            <div className="flex-1 h-screen py-4 flex flex-col justify-between">
               <div className="flex flex-col justify-center min-[964px]:items-start max-[964px]">
                 <div className="flex items-center px-2 lg:px-0">
                   <img src={artopialogo} alt="artopia-icon" className="pr-4" />

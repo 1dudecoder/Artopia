@@ -5,11 +5,11 @@ import ImageGrid from "../common/imageGrid/ImageGrid";
 function ImageSearch() {
   return (
     <div>
-      <div className="w-[100%]  text-white  overflow-auto font-HindMadurai">
+      <div className="w-[100%]  text-white  overflow-auto font-HindMadurai ">
         <div className="m-4">
           <p className="font-bold ">Image Generation</p>
 
-          <div className="w-full px-7 py-10  rounded-lg mt-4 bg-[#5d5d5d26]  backdrop-filter backdrop-blur-sm flex justify-center items-center">
+          <div className="w-full px-7 py-10  rounded-lg mt-4 bg-[#5d5d5d26]  backdrop-filter backdrop-blur-sm flex justify-center items-center  border-[0.2px] border-[#f5f5f540]">
             <div className="max-w-lg mx-auto  shadow-md rounded-lg flex justify-center items-center flex-col font-popin">
               <img src={imggen} alt="image-genrate" className="mb-6" />
               <p className="text-[18px] sm:text-[20px]">Image Generation </p>
@@ -29,7 +29,7 @@ function ImageSearch() {
           <div className="flex justify-between mb-4 mt-8 ">
             <p className="text-[20px]">Recent Creations</p>
 
-            <div className="flex center items-center text-[#F4F4F4]">
+            <div className="flex center items-center text-[#f4f4f4d1]">
               <p className="pr-2 text-[12px]">View All</p>
               <img src={downarrow} alt="down-arrow" />
             </div>
