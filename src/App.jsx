@@ -10,6 +10,7 @@ function App() {
           <Route path="/" element={<WalletConnect />} />
           <Route path="/dashboard" element={<Dasboard />} />
           <Route path="/history" element={<Dasboard />} />
+          <Route path="/texttoimage" element={<Dasboard />} />
         </Routes>
       </BrowserRouter>
     </div>

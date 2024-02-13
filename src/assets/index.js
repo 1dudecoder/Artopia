@@ -25,10 +25,17 @@ import disconnecticon from "../assets/dashboard-aside/disconnect-icon.png";
 import imggen from "../assets/dashboard-aside/img-genrate.png";
 import downarrow from "../assets/dashboard-aside/downarro.png";
 import dashhide from "../assets/dashboard-aside/dash-hide.svg";
+
 //history page
 import searchicon from "../assets/dashboard-aside/search-img.png";
 import zoomin from "../assets/dashboard-aside/zoomoug.png";
 
+//texttoimage
+
+import startIcon from "../assets/textoimage/startgenrating.svg";
+import filegeticon from "../assets/textoimage/filegeticon.svg";
+import loadingIconnew from "../assets/textoimage/loading.svg";
+import dropicon from "../assets/textoimage/drop-icon.svg";
 export {
   catimg,
   artopialogo,
@@ -55,4 +62,8 @@ export {
   imggen,
   downarrow,
   dashhide,
+  startIcon,
+  filegeticon,
+  loadingIconnew,
+  dropicon,
 };

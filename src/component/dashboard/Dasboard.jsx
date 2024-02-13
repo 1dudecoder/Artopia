@@ -20,21 +20,26 @@ import ImageButton from "../common/image-button/ImageButton";
 import ImageSearch from "../Image-search/ImageSearch";
 import { useLocation, useRoutes } from "react-router-dom";
 import History from "../historyCompo/History";
+import TextToImage from "../TextToImage/TextToImage";
 
 function Dasboard() {
-  const loction = useLocation();
+  const location = useLocation();
 
   const [barHide, setBarHide] = useState(false);
 
   function handledashboard() {
-    console.log(loction.pathname, "path-----");
+    console.log(location.pathname, "path-----");
 
-    if (loction.pathname == "/dashboard") {
+    if (location.pathname == "/dashboard") {
       return <ImageSearch />;
     }
 
-    if (loction.pathname == "/history") {
+    if (location.pathname == "/history") {
       return <History />;
+    }
+
+    if (location.pathname == "/texttoimage") {
+      return <TextToImage />;
     }
   }
 
@@ -183,7 +188,7 @@ function Dasboard() {
 
   return (
     <>
-      <div className="h-screen w-screen bg-custom-gradient flex font-HindMadurai ">
+      <div className="h-screen  w-screen bg-custom-gradient flex font-HindMadurai ">
         <div className="hidden sm:flex w-[250px]  justify-end bg-[#5d5d5d26]  backdrop-filter backdrop-blur-sm pl-6 border-e-[0.2px] border-[#f4f4f447]">
           <SidebarItem />
         </div>
@@ -199,7 +204,7 @@ function Dasboard() {
           </div>
         </div>
 
-        <div className="w-[100%]  text-white  overflow-auto font-HindMadurai">
+        <div className="w-[100%] h-screen text-white  overflow-auto font-HindMadurai">
           <div className="flex sm:hidden w-full justify-between py-4 px-4">
             <div className="flex justify-center items-center">
               <img src={artopialogo} alt="artopia-icon" className="pr-4 h-4" />
