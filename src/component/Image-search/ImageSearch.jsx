@@ -1,8 +1,15 @@
 import React from "react";
 import { downarrow, imggen } from "../../assets";
 import ImageGrid from "../common/imageGrid/ImageGrid";
+import { useNavigate } from "react-router-dom";
 
 function ImageSearch() {
+  const navigate = useNavigate();
+
+  const handleviewAll = () => {
+    navigate("/history");
+  };
+
   return (
     <div>
       <div className="w-[100%]  text-white  overflow-auto font-HindMadurai ">
@@ -29,7 +36,10 @@ function ImageSearch() {
           <div className="flex justify-between mb-4 mt-8 ">
             <p className="text-[20px]">Recent Creations</p>
 
-            <div className="flex center items-center text-[#f4f4f4d1]">
+            <div
+              className="flex center items-center text-[#f4f4f4d1] cursor-pointer"
+              onClick={handleviewAll}
+            >
               <p className="pr-2 text-[12px]">View All</p>
               <img src={downarrow} alt="down-arrow" />
             </div>

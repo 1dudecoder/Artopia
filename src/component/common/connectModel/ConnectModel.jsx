@@ -138,7 +138,7 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
         <div
           className={`${
             isOpen
-              ? "hidden max-[964px]:block absolute w-full bg-red-100"
+              ? "hidden max-[964px]:block absolute w-full"
               : "hidden"
           }`}
         >

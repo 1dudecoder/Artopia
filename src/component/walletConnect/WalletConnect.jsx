@@ -3,12 +3,15 @@ import { catimg, walletimg, artopialogo } from "../../assets";
 import ConnectModel from "../common/connectModel/ConnectModel";
 import { ethers } from "ethers";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getwallet } from "../../store/reducers/walletSlice";
 
 function WalletConnect() {
   const [openWalletModal, setOpenWalletModal] = useState(false);
   const [connected, setConnected] = useState(false);
   const [address, setAddress] = useState("");
   const [error, setError] = useState(null);
+  let dispatch = useDispatch();
 
   const navigate = useNavigate();
 
@@ -22,6 +25,11 @@ function WalletConnect() {
       setConnected(true);
       setError(null);
       console.log("MetaMask connected");
+      let data = {
+        name: "bob",
+        address: connectedAddress,
+      };
+      dispatch(getwallet(data));
     } catch (error) {
       setError("Failed to connect to MetaMask.");
       setConnected(false);
@@ -33,8 +41,6 @@ function WalletConnect() {
   };
 
   useEffect(() => {
-    console.log(connected, connected, error, address, "connected---");
-
     if (connected) {
       setTimeout(() => {
         navigate("/dashboard");

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import {
   artopialogo,
   dashhide,
@@ -18,14 +18,21 @@ import {
 } from "../../assets";
 import ImageButton from "../common/image-button/ImageButton";
 import ImageSearch from "../Image-search/ImageSearch";
-import { useLocation, useRoutes } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import History from "../historyCompo/History";
 import TextToImage from "../TextToImage/TextToImage";
+import { useSelector, useDispatch } from "react-redux";
 
 function Dasboard() {
   const location = useLocation();
+  const navigate = useNavigate();
+  const walletdata = useSelector((state) => state.walletData.data);
 
   const [barHide, setBarHide] = useState(false);
+
+  const handleNavigate = useCallback((navr) => {
+    navigate(`${navr}`);
+  }, []);
 
   function handledashboard() {
     console.log(location.pathname, "path-----");
@@ -94,11 +101,21 @@ function Dasboard() {
 
             <div className="text-white mt-6  text-start">
               <p className="text-[#9E9E9E] text-base  mt-[5%]">Start Here</p>
-              <div className="flex flex-col">
-                <div className="flex justify-start mt-3">
+              <div className="flex flex-col ">
+                <div
+                  className="flex justify-start mt-3"
+                  onClick={() => {
+                    handleNavigate("/dashboard");
+                  }}
+                >
                   <ImageButton icon={homeicon} text={"Home"} size={"base"} />
                 </div>
-                <div className="flex justify-start mt-5">
+                <div
+                  className="flex justify-start mt-5"
+                  onClick={() => {
+                    handleNavigate("/history");
+                  }}
+                >
                   <ImageButton
                     icon={historyicon}
                     text={"History"}
@@ -111,7 +128,12 @@ function Dasboard() {
             <div className="text-white mt-4 text-start">
               <p className="text-[#9E9E9E] text-base mt-3">Tools</p>
               <div className="flex flex-col">
-                <div className="flex justify-start mt-3">
+                <div
+                  className="flex justify-start mt-3"
+                  onClick={() => {
+                    handleNavigate("/texttoimage");
+                  }}
+                >
                   <ImageButton
                     icon={textimg}
                     text={"Text to Image"}
@@ -186,9 +208,13 @@ function Dasboard() {
     );
   };
 
+  useEffect(() => {
+    console.log(walletdata, "walletdata------->");
+  }, []);
+
   return (
     <>
-      <div className="h-screen  w-screen bg-custom-gradient flex font-HindMadurai ">
+      <div className="h-screen w-screen bg-custom-gradient flex font-HindMadurai ">
         <div className="hidden sm:flex w-[250px]  justify-end bg-[#5d5d5d26]  backdrop-filter backdrop-blur-sm pl-6 border-e-[0.2px] border-[#f4f4f447]">
           <SidebarItem />
         </div>
@@ -205,8 +231,8 @@ function Dasboard() {
         </div>
 
         <div className="w-[100%] h-screen text-white  overflow-auto font-HindMadurai">
-          <div className="flex sm:hidden w-full justify-between py-4 px-4">
-            <div className="flex justify-center items-center">
+          <div className="flex sm:hidden w-full justify-between  h-[8%] py-3 px-4">
+            <div className="flex justify-center items-center ">
               <img src={artopialogo} alt="artopia-icon" className="pr-4 h-4" />
               <p className=" text-white text-2xl font-HindMadurai">Artopia</p>
             </div>
@@ -216,7 +242,7 @@ function Dasboard() {
                   <img src={girlimg} alt="girl-img" className="h-6" />
                 </div>
                 <div className="flex  items-center ">
-                  <p className="pr-2 text-sm text-[#F4F4F4]">Justin</p>
+                  <p className="pr-2 text-sm text-[#F4F4F4]">John Doe</p>
                   <img src={downarrow} alt="downarrow-icon" className="h-3" />
                 </div>
               </div>

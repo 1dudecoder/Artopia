@@ -87,3 +87,8 @@
 ::-webkit-scrollbar {
   width: 0px; /* Width of the scrollbar */
 }
+
+.custom-gradient-background {
+  background: linear-gradient(90deg, #2445EE 0%, #3AD6C7 100%),
+              linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+}

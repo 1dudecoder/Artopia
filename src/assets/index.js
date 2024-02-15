@@ -36,6 +36,7 @@ import startIcon from "../assets/textoimage/startgenrating.svg";
 import filegeticon from "../assets/textoimage/filegeticon.svg";
 import loadingIconnew from "../assets/textoimage/loading.svg";
 import dropicon from "../assets/textoimage/drop-icon.svg";
+import enhancePromptIcon from '../assets/textoimage/Vector.png';
 export {
   catimg,
   artopialogo,
@@ -66,4 +67,5 @@ export {
   filegeticon,
   loadingIconnew,
   dropicon,
+  enhancePromptIcon ,
 };
