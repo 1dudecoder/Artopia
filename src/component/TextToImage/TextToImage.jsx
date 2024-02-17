@@ -51,7 +51,7 @@ function TextToImage() {
         )}
 
         <div className="flex flex-col w-full justify-start items-center lg:mb-[0px]   ">
-          <p className="text-[#FFFFFF99] place-self-start font-HindMadurai text-[18px]  text-white px-2 py-1 text-[18px]">
+          <p className="text-[#FFFFFF99] place-self-start font-HindMadurai text-[18px]  text-white px-2 py-1">
             {" "}
             Prompt{" "}
           </p>

@@ -22,6 +22,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import History from "../historyCompo/History";
 import TextToImage from "../TextToImage/TextToImage";
 import { useSelector, useDispatch } from "react-redux";
+import ImagetoText from "../Imagetotext/ImagetoText";
 
 function Dasboard() {
   const location = useLocation();
@@ -47,6 +48,10 @@ function Dasboard() {
 
     if (location.pathname == "/texttoimage") {
       return <TextToImage />;
+    }
+
+    if (location.pathname == "/imagetotext") {
+      return <ImagetoText />;
     }
   }
 
@@ -140,7 +145,12 @@ function Dasboard() {
                     size={"base"}
                   />
                 </div>
-                <div className="flex justify-start mt-5">
+                <div
+                  className="flex justify-start mt-5"
+                  onClick={() => {
+                    handleNavigate("/imagetotext");
+                  }}
+                >
                   <ImageButton
                     icon={imgicon}
                     text={"Image to Image"}

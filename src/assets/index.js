@@ -1,5 +1,4 @@
 import catimg from "../assets/walletconnect/cat.jpg";
-
 import artopialogo from "../assets/walletconnect/artopialogo.png";
 import walletimg from "../assets/walletconnect/wallet.png";
 import metamaskicon from "../assets/walletmodal/metamask-icon.png";
@@ -36,7 +35,12 @@ import startIcon from "../assets/textoimage/startgenrating.svg";
 import filegeticon from "../assets/textoimage/filegeticon.svg";
 import loadingIconnew from "../assets/textoimage/loading.svg";
 import dropicon from "../assets/textoimage/drop-icon.svg";
-import enhancePromptIcon from '../assets/textoimage/Vector.png';
+import enhancePromptIcon from "../assets/textoimage/Vector.png";
+
+//imagetotext
+import crownicon from "../assets/imagetotext/crown-icon.svg";
+import scrollericon from "../assets/imagetotext/scroller-icon.svg";
+
 export {
   catimg,
   artopialogo,
@@ -67,5 +71,7 @@ export {
   filegeticon,
   loadingIconnew,
   dropicon,
-  enhancePromptIcon ,
+  enhancePromptIcon,
+  crownicon,
+  scrollericon,
 };
