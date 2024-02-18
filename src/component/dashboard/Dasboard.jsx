@@ -239,13 +239,13 @@ function Dasboard() {
         </div>
 
         <div className="w-[100%] h-screen text-white  overflow-auto font-HindMadurai">
-          <div className="flex sm:hidden w-full justify-between  h-[8%] py-3 px-4">
+          <div className="flex sm:hidden w-full justify-between  h-[8%] py-3 px-2">
             <div className="flex justify-center items-center ">
               <img src={artopialogo} alt="artopia-icon" className="pr-4 h-4" />
               <p className=" text-white text-2xl font-HindMadurai">Artopia</p>
             </div>
             <div className="flex items-center">
-              <div className="border-2 border-[#9e9e9e5b] py-1 px-4 rounded-[20px] flex  items-center justify-between">
+              <div className="border-2 border-[#9e9e9e5b] py-1 px-3 rounded-[20px] flex  items-center justify-between">
                 <div className="flex justify-center items-center pr-1">
                   <img src={girlimg} alt="girl-img" className="h-6" />
                 </div>

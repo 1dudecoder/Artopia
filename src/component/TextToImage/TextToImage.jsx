@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
-  dropicon,
   filegeticon,
   loadingIconnew,
   startIcon,
@@ -9,22 +8,34 @@ import {
 
 import Loadinggrid from "../common/loadinggrid/Loadinggrid";
 import Dropdown from "../common/dropdown/Dropdown";
+import { useLocation } from "react-router-dom";
 
-function TextToImage() {
+function TextToImage(props) {
+  const { state } = useLocation();
+
+  const { navyes = false, selectedImage = null } = state || {};
+
+  console.log(location, navyes, selectedImage, "selectedImage-->");
+
   const [isLoading, setIsLoading] = useState(false);
   const [gridchange, setGridChange] = useState(true);
+  const [inputdataflag, setInputdataFlag] = useState(false);
+  const [textareaInput, settextareaInput] = useState("");
 
   const handleGenerateClick = () => {
-    // Set isLoading to true when Generate is clicked
     setIsLoading(true);
-    // Simulate some asynchronous process (e.g., API call)
-    // Replace the setTimeout with your actual async logic
-    // Replace 2000 with the actual time your process takes
+    setInputdataFlag(!inputdataflag);
   };
 
   const handlegridchange = () => {
     setGridChange(!gridchange);
   };
+
+  useEffect(() => {
+    if (selectedImage) {
+      settextareaInput(selectedImage.descrition);
+    }
+  }, [selectedImage]);
 
   return (
     <div className="bg-custom-gradient p-0 h-[90%] sm:h-full w-full flex flex-col px-2 pt-2 sm:px-4 sm:pt-4">
@@ -38,7 +49,7 @@ function TextToImage() {
             view
           </p>
         </div>
-        {true ? (
+        {inputdataflag ? (
           <Loadinggrid onClick={setGridChange} gridchange={gridchange} />
         ) : (
           <div className="w-full flex justify-center items-center flex-col">
@@ -58,8 +69,8 @@ function TextToImage() {
           <div className="flex-col flex lg:flex-row item-center justify-start gap-[12px] w-full px-2">
             <div className="flex lg:flex-row flex-row  flex-wrap">
               <div className="flex flex-wrap">
-                <Dropdown text={"Select style"} />
                 <Dropdown text={"Select models"} />
+                <Dropdown text={"Select styles"} />
                 <Dropdown text={"Aspect Radio"} />
               </div>
 
@@ -88,11 +99,26 @@ function TextToImage() {
                 <img src={filegeticon} alt="file-icon" />
               </div>
 
-              <div className="w-full flex justify-start ml-2 ">
-                <textarea
-                  placeholder="Type your promt"
-                  className="w-full bg-transparent  outline-none h-full text-[#9E9E9E] font-[400] text-[15px] font-inter "
-                />
+              <div className="flex justify-start items-start flex-col w-full">
+                {textareaInput && navyes && selectedImage && (
+                  <div className="flex text-base font-popin w-full h-fit px-2 pb-1">
+                    <p className="p-1 bg-[#2445EE] rounded-l-md text-sm">
+                      Img Url:
+                    </p>
+                    <p className="p-1 bg-blur text-sm backdrop-blur-sm bg-[#ffffff20] rounded-r-md ">
+                      Dragon of the seas.png
+                    </p>
+                  </div>
+                )}
+
+                <div className="w-full flex justify-start ml-2 ">
+                  <textarea
+                    placeholder="Type your promt"
+                    className="w-full bg-transparent  outline-none h-full text-[#9E9E9E] font-[400] text-[15px] font-inter"
+                    value={textareaInput}
+                    onChange={(e) => settextareaInput(e.target.value)}
+                  />
+                </div>
               </div>
             </div>
 
