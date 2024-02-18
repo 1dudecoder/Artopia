@@ -1,0 +1,42 @@
+.thumbnail-slider-wrap {
+  margin: 16px;
+  height: 50px;
+}
+
+.thumbnail-slider-wrap .slick-track .slick-slide {
+  text-align: center;
+}
+
+.slick-slide-image {
+  margin: auto;
+}
+
+.slick-slide {
+  height: auto;
+}
+
+slick-slider .thumbnail-slider-wrap {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slick-slide-image {
+  border-radius: 5%;
+}
+
+.slick-list .slick-track {
+  display: flex;
+  place-items: center;
+}
+
+.slick-list {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+}
+
+.slick-current #tumb {
+  background-color: white;
+  border: 2px white;
+  padding: 2px;
+}
