@@ -12,7 +12,7 @@ function App() {
           <Route path="/dashboard" element={<Dasboard />} />
           <Route path="/history" element={<Dasboard />} />
           <Route path="/texttoimage" element={<Dasboard />} />
-          <Route path="/imagetotext" element={<Dasboard />} />
+          <Route path="/imagetoimage" element={<Dasboard />} />
         </Routes>
       </BrowserRouter>
 

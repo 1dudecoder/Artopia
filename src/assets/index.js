@@ -37,7 +37,7 @@ import loadingIconnew from "../assets/textoimage/loading.svg";
 import dropicon from "../assets/textoimage/drop-icon.svg";
 import enhancePromptIcon from "../assets/textoimage/Vector.png";
 
-//imagetotext
+//imagetoimage
 import crownicon from "../assets/imagetotext/crown-icon.svg";
 import scrollericon from "../assets/imagetotext/scroller-icon.svg";
 

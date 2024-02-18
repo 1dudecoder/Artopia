@@ -4,7 +4,7 @@ import ConnectModel from "../common/connectModel/ConnectModel";
 import { ethers } from "ethers";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { getwallet } from "../../store/reducers/walletSlice";
+import { getwallet } from "../../features/reducers/walletSlice";
 
 function WalletConnect() {
   const [openWalletModal, setOpenWalletModal] = useState(false);
