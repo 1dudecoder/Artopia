@@ -41,6 +41,9 @@ import enhancePromptIcon from "../assets/textoimage/Vector.png";
 import crownicon from "../assets/imagetotext/crown-icon.svg";
 import scrollericon from "../assets/imagetotext/scroller-icon.svg";
 
+import uploadicon from "../assets/uploadImage/upload-icon.svg";
+import viewallicon from "../assets/uploadImage/view-arrow-icon.svg";
+
 export {
   catimg,
   artopialogo,
@@ -74,4 +77,6 @@ export {
   enhancePromptIcon,
   crownicon,
   scrollericon,
+  uploadicon,
+  viewallicon,
 };

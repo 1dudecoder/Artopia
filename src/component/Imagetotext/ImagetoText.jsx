@@ -2,27 +2,33 @@ import React, { useState } from "react";
 import { crownicon, scrollericon } from "../../assets";
 import ImageGrid from "../common/imageGrid/ImageGrid";
 import ImageModal from "../common/imagemodal/ImageModal";
+import ImageUpload from "../common/imageUpload/ImageUpload";
 
 function ImagetoImage() {
   const [imagemodal, setImageModal] = useState(false);
+  const [uploadImageFlag, setUploadImageFlag] = useState(false);
 
   const handleImageModal = () => {
     setImageModal(!imagemodal);
   };
 
+  const handleUploadModal = () => {
+    setUploadImageFlag(!uploadImageFlag);
+  };
+
   return (
-    <div className="w-full h-screen flex flex-row min-[1000px]:flex-col relative px-2">
-      <div className="h-screen  overflow-scroll">
+    <div className="w-full h-screen flex flex-row min-[1000px]:flex-col relative  overflow-hidden">
+      <div className="h-screen  overflow-scroll px-2">
         <div className="flex flex-col   min-[665px]:flex min-[665px]:flex-row min-[665px]:justify-between min-[665px]:items-center pt-5 sm:px-8">
           <div>
             <p className="">AI Image Generation</p>
           </div>
 
           <div
-            className="flex justify-center mt-4 sm:mt-0 h-fit px-4  item-center bg-gradient-to-r from-blue-500 to-teal-400  rounded-3xl  py-1"
-            onClick={handleImageModal}
+            className="flex justify-center mt-4 sm:mt-0 h-fit px-4  item-center bg-gradient-to-r from-blue-500 to-teal-400  rounded-3xl  py-1 "
+            onClick={handleUploadModal}
           >
-            <p className="text-xl px-2">Upload Image</p>
+            <p className="text-xl px-2 ">Upload Image</p>
           </div>
         </div>
 
@@ -56,6 +62,12 @@ function ImagetoImage() {
       {imagemodal && (
         <div className=" w-full h-screen absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 flex justify-center items-center">
           <ImageModal handleModalShow={handleImageModal} />
+        </div>
+      )}
+
+      {uploadImageFlag && (
+        <div className="h-full w-full z-10 bg-cover bg-center bg-blur backdrop-blur-md absolute flex justify-center item-center px-4">
+          <ImageUpload handleUploadModal={handleUploadModal} />
         </div>
       )}
     </div>
