@@ -87,9 +87,7 @@ function WalletConnect() {
                   </div>
                 </div>
               </div>
-              <p className="underline text-[#9E9E9E] pt-3 font-popin">
-                Go back
-              </p>
+
             </div>
           </div>
 

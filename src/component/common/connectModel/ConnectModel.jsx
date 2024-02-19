@@ -7,8 +7,11 @@ import {
   walletMob,
   remove,
 } from "../../../assets";
+import { useNavigate } from "react-router-dom";
 
 const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div
@@ -77,7 +80,14 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                     </p>
                     <div className="">
                       <p className="px-10 py-2 bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 text-center rounded-[50px] mt-3 cursor-pointer">
-                        <p className="text-[18px] ">Connect Wallet</p>
+                        <p
+                          className="text-[18px] "
+                          onClick={() => {
+                            navigate("/dashboard");
+                          }}
+                        >
+                          Connect Wallet
+                        </p>
                       </p>
                     </div>
                   </div>
@@ -137,9 +147,7 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
       ) : (
         <div
           className={`${
-            isOpen
-              ? "hidden max-[964px]:block absolute w-full"
-              : "hidden"
+            isOpen ? "hidden max-[964px]:block absolute w-full" : "hidden"
           }`}
         >
           <div className="bg-custom-gradient flex justify-center items-center h-full w-full px-4 ">
@@ -182,7 +190,12 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                       <div className="flex flex-col items-center justify-center">
                         <img src={walletMob} alt="wallet-mob-img" />
                         <p className="text-3xl py-2">Wallet Connect</p>
-                        <div className="bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 w-full py-2 px-20 lg:px-32 text-center rounded-[50px] mt-4">
+                        <div
+                          className="bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 w-full py-2 px-20 lg:px-32 text-center rounded-[50px] mt-4"
+                          onClick={() => {
+                            navigate("/dashboard");
+                          }}
+                        >
                           Connect
                         </div>
                       </div>
