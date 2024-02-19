@@ -6,11 +6,11 @@ function ImageGrid() {
 
   useEffect(() => {
     fetchImages();
-  }, []);
+  });
 
   const fetchImages = async () => {
     try {
-      const numImages = 50;
+      const numImages = 10;
       const responses = await Promise.all(
         Array.from({ length: numImages }, () =>
           fetch("https://api.thecatapi.com/v1/images/search")
