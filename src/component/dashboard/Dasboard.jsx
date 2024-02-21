@@ -28,6 +28,7 @@ function Dasboard() {
   const location = useLocation();
   const navigate = useNavigate();
   const walletdata = useSelector((state) => state.walletData.data);
+  const anymodal = useSelector((state) => state.dashboarddata.data.anymodal);
 
   const [barHide, setBarHide] = useState(false);
 
@@ -56,6 +57,8 @@ function Dasboard() {
   const handledashbar = () => {
     setBarHide(!barHide);
   };
+
+  useEffect(() => {}, [anymodal]);
 
   const SidebarItem = () => {
     return (
@@ -102,7 +105,7 @@ function Dasboard() {
               </p>
             </div>
 
-            <div className="text-white mt-6  text-start">
+            <div className="text-white mt-8 sm:mt-6  text-start">
               <p className="text-[#9E9E9E] text-base  mt-[5%]">Start Here</p>
               <div className="flex flex-col ">
                 <div
@@ -128,7 +131,7 @@ function Dasboard() {
               </div>
             </div>
 
-            <div className="text-white mt-4 text-start">
+            <div className="text-white  mt-8 sm:mt-6 text-start">
               <p className="text-[#9E9E9E] text-base mt-3">Tools</p>
               <div className="flex flex-col">
                 <div
@@ -158,7 +161,7 @@ function Dasboard() {
               </div>
             </div>
 
-            <div className="text-white mt-4  text-start">
+            <div className="text-white  mt-8 sm:mt-6  text-start">
               <p className="text-[#9E9E9E] text-base mt-3">More Option</p>
               <div className="flex flex-col">
                 <div className="flex justify-start mt-5">
@@ -216,10 +219,6 @@ function Dasboard() {
     );
   };
 
-  useEffect(() => {
-    console.log(walletdata, "walletdata------->");
-  }, []);
-
   return (
     <>
       <div className="h-screen w-screen bg-custom-gradient flex font-HindMadurai ">
@@ -239,30 +238,37 @@ function Dasboard() {
         </div>
 
         <div className="w-[100%] h-screen text-white  overflow-auto font-HindMadurai">
-          <div className="flex sm:hidden w-full justify-between  h-[8%] py-3 px-2">
-            <div className="flex justify-center items-center ">
-              <img src={artopialogo} alt="artopia-icon" className="pr-4 h-4" />
-              <p className=" text-white text-2xl font-HindMadurai">Artopia</p>
-            </div>
-            <div className="flex items-center">
-              <div className="border-2 border-[#9e9e9e5b] py-1 px-3 rounded-[20px] flex  items-center justify-between">
-                <div className="flex justify-center items-center pr-1">
-                  <img src={girlimg} alt="girl-img" className="h-6" />
-                </div>
-                <div className="flex  items-center ">
-                  <p className="pr-2 text-sm text-[#F4F4F4]">John Doe</p>
-                  <img src={downarrow} alt="downarrow-icon" className="h-3" />
-                </div>
+          {!anymodal && (
+            <div className="flex sm:hidden w-full justify-between  h-[8%] py-3 px-2">
+              <div className="flex justify-center items-center ">
+                <img
+                  src={artopialogo}
+                  alt="artopia-icon"
+                  className="pr-4 h-4"
+                />
+                <p className=" text-white text-2xl font-HindMadurai">Artopia</p>
               </div>
+              <div className="flex items-center">
+                <div className="border-2 border-[#9e9e9e5b] py-1 px-3 rounded-[20px] flex  items-center justify-between">
+                  <div className="flex justify-center items-center pr-1">
+                    <img src={girlimg} alt="girl-img" className="h-6" />
+                  </div>
+                  <div className="flex  items-center ">
+                    <p className="pr-2 text-sm text-[#F4F4F4]">John Doe</p>
+                    <img src={downarrow} alt="downarrow-icon" className="h-3" />
+                  </div>
+                </div>
 
-              <div
-                className="text-white ml-2 p-2 py-3 rounded-full border-[#f4f4f458] border-2"
-                onClick={handledashbar}
-              >
-                <img src={dashhide} alt="dash-hide" />
+                <div
+                  className="text-white ml-2 p-2 py-3 rounded-full border-[#f4f4f458] border-2"
+                  onClick={handledashbar}
+                >
+                  <img src={dashhide} alt="dash-hide" />
+                </div>
               </div>
             </div>
-          </div>
+          )}
+
           {handledashboard()}
         </div>
       </div>

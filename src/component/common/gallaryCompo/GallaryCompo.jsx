@@ -161,7 +161,6 @@ function Gallery({ handleSlideChange, setselectedImage }) {
         >
           {slidesData.map((slide) => (
             <div className="slick-slide h-[300px]  w-[250px] min-[1000px]:h-[500px] min-[1000px]:w-full  rounded-2xl overflow-hidden">
-              {console.log(slide, "slide---")}
               <img
                 className="slick-slide-image py-2 px-2  object-cover h-full w-full scroll-mx-0  rounded-2xl overflow-hidden"
                 src={slide.img}

@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { remove, uploadicon, viewallicon } from "../../../assets";
+import { useSelector } from "react-redux";
 
 function ImageUpload({ handleUploadModal }) {
   const [uploadImage, setUploadImage] = useState(true);
   const [recentImage, setRecentImage] = useState(false);
   const [urlImage, setUrlImage] = useState(false);
+  const anymodal = useSelector((state) => state.dashboarddata.data.anymodal);
 
   const handleUploadbtn = (item) => {
     setUploadImage(false);
     setRecentImage(false);
     setUrlImage(false);
+
     if (item == "upload") {
       setUploadImage(true);
     }

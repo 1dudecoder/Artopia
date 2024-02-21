@@ -3,22 +3,28 @@ import { crownicon, scrollericon } from "../../assets";
 import ImageGrid from "../common/imageGrid/ImageGrid";
 import ImageModal from "../common/imagemodal/ImageModal";
 import ImageUpload from "../common/imageUpload/ImageUpload";
+import { useDispatch } from "react-redux";
+import { anymodal } from "../../features/reducers/dashboardSlice";
 
 function ImagetoImage() {
   const [imagemodal, setImageModal] = useState(false);
   const [uploadImageFlag, setUploadImageFlag] = useState(false);
 
+  const dispatch = useDispatch();
+
   const handleImageModal = () => {
+    dispatch(anymodal(!imagemodal));
     setImageModal(!imagemodal);
   };
 
   const handleUploadModal = () => {
     setUploadImageFlag(!uploadImageFlag);
+    dispatch(anymodal(!uploadImageFlag));
   };
 
   return (
     <div className="w-full h-screen flex flex-row min-[1000px]:flex-col relative  overflow-hidden">
-      <div className="h-screen  overflow-scroll px-2">
+      <div className="h-screen  overflow-scroll px-2 w-full">
         <div className="flex flex-col   min-[665px]:flex min-[665px]:flex-row min-[665px]:justify-between min-[665px]:items-center pt-5 sm:px-8">
           <div>
             <p className="">AI Image Generation</p>
@@ -61,7 +67,10 @@ function ImagetoImage() {
 
       {imagemodal && (
         <div className=" w-full h-screen absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 flex justify-center items-center">
-          <ImageModal handleModalShow={handleImageModal} />
+          <ImageModal
+            handleModalShow={handleImageModal}
+            imagemodal={imagemodal}
+          />
         </div>
       )}
 

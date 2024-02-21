@@ -6,7 +6,7 @@ function ImageGrid() {
 
   useEffect(() => {
     fetchImages();
-  });
+  }, []);
 
   const fetchImages = async () => {
     try {
