@@ -13,17 +13,14 @@ function App() {
           <Route path="/history" element={<Dasboard />} />
           <Route path="/texttoimage" element={<Dasboard />} />
           <Route path="/imagetoimage" element={<Dasboard />} />
+          <Route path="/buymore" element={<Dasboard />} />
         </Routes>
       </BrowserRouter>
-
     </div>
   );
 }
 
 export default App;
-
-
-
 
 const slidesData = [
   {

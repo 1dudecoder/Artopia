@@ -40,9 +40,17 @@ import enhancePromptIcon from "../assets/textoimage/Vector.png";
 //imagetoimage
 import crownicon from "../assets/imagetotext/crown-icon.svg";
 import scrollericon from "../assets/imagetotext/scroller-icon.svg";
-
 import uploadicon from "../assets/uploadImage/upload-icon.svg";
 import viewallicon from "../assets/uploadImage/view-arrow-icon.svg";
+
+//buy-page
+import backicon from "../assets/buymore/back-icon.svg";
+import backspinner from "../assets/buymore/back-spinner.svg";
+import downicon from "../assets/buymore/down-icon.svg";
+import lockicon from "../assets/buymore/lock-icon.svg";
+import usdticon from "../assets/buymore/usdt-icon.svg";
+import backdownarrow from "../assets/buymore/drop-icon.svg";
+import errormodalicon from "../assets/buymore/errormodal-icon.svg";
 
 export {
   catimg,
@@ -79,4 +87,11 @@ export {
   scrollericon,
   uploadicon,
   viewallicon,
+  backicon,
+  backspinner,
+  downicon,
+  lockicon,
+  usdticon,
+  backdownarrow,
+  errormodalicon,
 };

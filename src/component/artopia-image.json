@@ -1,0 +1,52 @@
+{
+    "id": "5d8b9f2a-caf8-4ac0-82c5-ae6936595292",
+    "ImageId": null,
+    "walletAddress": "0x4dfd77cf89Bb45DD2001ba8f6dD437b58B4E56b5",
+    "transactionHash": null,
+    "creditUsed": null,
+    "prompt": "Artwork of an old fashioned futuristic astronaut in spacesuit decorated with Intricate white and gold patchwork, In a vibrant white colors with metallic accents rounded cables and wires, transparent color shells crystal-clear helmet wearing a big Full Highly detailed colorful sunglasses, volumetric lighting, art by Yayoi Kusama, Phuoc Quan",
+    "results": "f3d0c198-dd91-43fe-bdc1-72496882e3b9",
+    "user_created": "ac06ed56-cd2d-44e6-9813-008523f6de63",
+    "date_created": "2024-02-01T13:15:56.918Z",
+    "status": "completed",
+    "progress": null,
+    "url": "https://imagineapi.nambitech.com/assets/f3d0c198-dd91-43fe-bdc1-72496882e3b9/f3d0c198-dd91-43fe-bdc1-72496882e3b9.png",
+    "error": null,
+    "backstory_prompt": "Artwork of an old fashioned futuristic astronaut in spacesuit decorated with Intricate white and gold patchwork, In a vibrant white colors with metallic accents rounded cables and wires, transparent color shells crystal-clear helmet wearing a big Full Highly detailed colorful sunglasses, volumetric lighting, art by Yayoi Kusama, Phuoc Quan",
+    "backstory_content": "Title: \"The Astral Voyager\"\n\n\"The Astral Voyager\" is a remarkable piece of artwork created by the collaborative efforts of Japanese contemporary artist Yayoi Kusama and Vietnamese artist Phuoc Quan. This surreal piece is steeped in history, fantasy, and futurism, merging two diverse cultures and artistic styles into an intricate depiction of an old-fashioned astronaut.\n\nThe concept of the piece was conceived during a chance meeting between Kusama and Quan at an international art exhibition. Kusama, known for her fascination with polka dots and infinity nets, and Quan, recognized for his meticulous detailing and intricate patchwork designs, decided to combine their unique artistic approaches to create a stunning piece of art.\n\nThe astronaut in the artwork, garbed in a spacesuit adorned with intricate white and gold patchwork, represents humanity's timeless quest for knowledge and exploration. The old-fashioned design of the suit is a nod to the earliest adventurers of space, embodying nostalgia and reverence for the pioneers of space exploration.\n\nThe vibrant white color of the spacesuit, accentuated with metallic accents and rounded cables and wires, blends traditional astronaut aesthetics with a futuristic edge. The transparent color shells on the suit emphasize the astronaut's vulnerability, while the crystal-clear helmet symbolizes the clarity of purpose and vision required for such daring adventures.\n\nOne of the most striking features of this piece is the astronaut's large, colorful sunglasses. These are not merely an accessory but a symbol of the astronaut's audacious spirit and readiness to face the unknown. The highly detailed and colorful sunglasses reflect the universe's vastness and mystery, representing the astronaut's daring spirit and readiness to face the unknown.\n\nThe volumetric lighting used in the artwork adds an ethereal quality to the piece, enhancing the overall surrealism of the scene. The light creates a stark contrast between the bright, vibrant colors of the astronaut and the vast, dark void of space, emphasizing the astronaut's solitary journey into the unknown.\n\n\"The Astral Voyager\" is a testament to Kusama and Quan's artistic genius. It is a brilliant fusion of past, present, and future, rich with symbolism and detail. It pays tribute to the courage and curiosity of all space explorers, from the pioneers of the past to the adventurers of the future. The piece is a visual manifestation of humanity's never-ending quest for knowledge and exploration, a celebration of our courage, curiosity, and thirst for discovery.",
+    "createdTime": "2024-02-16T07:33:48.957Z",
+    "upscaledUrls": [
+        {
+            "id": "ce8fd9fb-2cf6-4382-a85b-1cea39be6907",
+            "imageUrl": "https://imagineapi.nambitech.com/assets/66c67556-cd31-4cce-847f-30d772f20132/66c67556-cd31-4cce-847f-30d772f20132.png",
+            "upscaled": "140e3a22-6c5f-45da-b5f1-7ed23cc217d4",
+            "backstoryPrompt": null,
+            "backstoryContent": null,
+            "createdTime": "2024-02-16T10:04:40.217Z"
+        },
+        {
+            "id": "b2284c2b-61f9-4e0c-ac9f-e93be7ea0da7",
+            "imageUrl": "https://imagineapi.nambitech.com/assets/4a2da0ba-3726-4e6e-a8cf-04d6f5ce5bb4/4a2da0ba-3726-4e6e-a8cf-04d6f5ce5bb4.png",
+            "upscaled": "4a2da0ba-3726-4e6e-a8cf-04d6f5ce5bb4",
+            "backstoryPrompt": null,
+            "backstoryContent": null,
+            "createdTime": "2024-02-16T10:04:40.217Z"
+        },
+        {
+            "id": "700a7ef5-bcbc-47d9-ab0e-2c71809b3be1",
+            "imageUrl": "https://imagineapi.nambitech.com/assets/84cfc116-09fc-4caf-9a9e-70ca342e74a2/84cfc116-09fc-4caf-9a9e-70ca342e74a2.png",
+            "upscaled": "66c67556-cd31-4cce-847f-30d772f20132",
+            "backstoryPrompt": null,
+            "backstoryContent": null,
+            "createdTime": "2024-02-16T10:04:40.217Z"
+        },
+        {
+            "id": "77a7305f-4a4d-4bf6-91e0-fbb452ec4eba",
+            "imageUrl": "https://imagineapi.nambitech.com/assets/140e3a22-6c5f-45da-b5f1-7ed23cc217d4/140e3a22-6c5f-45da-b5f1-7ed23cc217d4.png",
+            "upscaled": "84cfc116-09fc-4caf-9a9e-70ca342e74a2",
+            "backstoryPrompt": null,
+            "backstoryContent": null,
+            "createdTime": "2024-02-16T10:04:40.217Z"
+        }
+    ]
+}

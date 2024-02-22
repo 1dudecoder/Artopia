@@ -23,6 +23,7 @@ import History from "../historyCompo/History";
 import TextToImage from "../TextToImage/TextToImage";
 import { useSelector, useDispatch } from "react-redux";
 import ImagetoImage from "../Imagetotext/ImagetoText";
+import BuyMore from "../buymore/BuyMore";
 
 function Dasboard() {
   const location = useLocation();
@@ -52,13 +53,15 @@ function Dasboard() {
     if (location.pathname == "/imagetoimage") {
       return <ImagetoImage />;
     }
+
+    if (location.pathname == "/buymore") {
+      return <BuyMore />;
+    }
   }
 
   const handledashbar = () => {
     setBarHide(!barHide);
   };
-
-  useEffect(() => {}, [anymodal]);
 
   const SidebarItem = () => {
     return (
@@ -94,7 +97,12 @@ function Dasboard() {
                 </div>
 
                 <div className="border flex justify-center items-center border-none  p-[0.70px] rounded-full whitespace-nowrap bg-gradient-to-r from-cyan-500 to-blue-500 ">
-                  <div class="px-2 py-1 rounded-full bg-[#000000ac]">
+                  <div
+                    class="px-2 py-1 rounded-full bg-[#000000ac]"
+                    onClick={() => {
+                      navigate("/buymore");
+                    }}
+                  >
                     <p class="text-sm font-popin">Buy More</p>
                   </div>
                 </div>
@@ -105,7 +113,7 @@ function Dasboard() {
               </p>
             </div>
 
-            <div className="text-white mt-8 sm:mt-6  text-start">
+            <div className="text-white mt-5 sm:mt-6  text-start">
               <p className="text-[#9E9E9E] text-base  mt-[5%]">Start Here</p>
               <div className="flex flex-col ">
                 <div
@@ -131,7 +139,7 @@ function Dasboard() {
               </div>
             </div>
 
-            <div className="text-white  mt-8 sm:mt-6 text-start">
+            <div className="text-white  mt-5 sm:mt-6 text-start">
               <p className="text-[#9E9E9E] text-base mt-3">Tools</p>
               <div className="flex flex-col">
                 <div
@@ -161,7 +169,7 @@ function Dasboard() {
               </div>
             </div>
 
-            <div className="text-white  mt-8 sm:mt-6  text-start">
+            <div className="text-white  mt-5 sm:mt-6  text-start">
               <p className="text-[#9E9E9E] text-base mt-3">More Option</p>
               <div className="flex flex-col">
                 <div className="flex justify-start mt-5">
@@ -237,9 +245,9 @@ function Dasboard() {
           </div>
         </div>
 
-        <div className="w-[100%] h-screen text-white  overflow-auto font-HindMadurai">
+        <div className="w-[100%] relative h-full text-white  overflow-auto font-HindMadurai">
           {!anymodal && (
-            <div className="flex sm:hidden w-full justify-between  h-[8%] py-3 px-2">
+            <div className="flex sm:hidden w-full justify-between   py-3 px-2">
               <div className="flex justify-center items-center ">
                 <img
                   src={artopialogo}
