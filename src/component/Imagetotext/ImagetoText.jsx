@@ -31,7 +31,7 @@ function ImagetoImage() {
           </div>
 
           <div
-            className="flex justify-center mt-4 sm:mt-0 h-fit px-4  item-center bg-gradient-to-r from-blue-500 to-teal-400  rounded-3xl  py-1 "
+            className="flex justify-center mt-4 sm:mt-0 h-fit px-4  item-center bg-gradient-to-r from-blue-700 to-teal-400  rounded-3xl  py-1 "
             onClick={handleUploadModal}
           >
             <p className="text-xl px-2 ">Upload Image</p>
@@ -41,7 +41,7 @@ function ImagetoImage() {
         <div className="mt-6 flex justify-start sm:px-8">
           <div className=" flex justify-start">
             <div
-              className="flex flex-nowrap justify-center h-fit px-4  item-center bg-gradient-to-r from-blue-500 to-teal-400  rounded-3xl  py-2"
+              className="flex flex-nowrap justify-center h-fit px-4  item-center bg-gradient-to-r from-blue-700 to-teal-400  rounded-3xl  py-2"
               onClick={handleImageModal}
             >
               <img src={crownicon} alt="loading-text" className="flex px-1" />

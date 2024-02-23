@@ -52,6 +52,18 @@ import usdticon from "../assets/buymore/usdt-icon.svg";
 import backdownarrow from "../assets/buymore/drop-icon.svg";
 import errormodalicon from "../assets/buymore/errormodal-icon.svg";
 
+//profile icons
+import uploadpofile from "../assets/profile/upload-icon.svg";
+import attheratesvg from "../assets/profile/attheratesvg.svg";
+import mastmaskprofile from "../assets/profile/metamask-icon.svg";
+import tickicon from "../assets/profile/tick-icon.svg";
+import depositicon from "../assets/profile/deposit-icon.svg";
+import exchangeicon from "../assets/profile/exchange-icon.svg";
+import deleteconformicon from "../assets/profile/delete-conform.svg";
+import successconformicon from "../assets/profile/success-conform.svg";
+
+
+
 export {
   catimg,
   artopialogo,
@@ -94,4 +106,12 @@ export {
   usdticon,
   backdownarrow,
   errormodalicon,
+  uploadpofile,
+  attheratesvg,
+  mastmaskprofile,
+  tickicon,
+  depositicon,
+  exchangeicon,
+  deleteconformicon,
+  successconformicon
 };

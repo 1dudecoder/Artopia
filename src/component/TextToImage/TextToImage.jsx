@@ -124,7 +124,7 @@ function TextToImage(props) {
 
             <div className="w-full h-[80%] mt-2 md:mt-0 md:w-[250px] text-center sm:px-4 justify-center">
               <div
-                className="flex justify-center  item-center bg-gradient-to-r from-blue-500 to-teal-400  rounded-3xl  py-2"
+                className="flex justify-center  item-center bg-gradient-to-r from-blue-700 to-teal-400  rounded-3xl  py-2"
                 onClick={handleGenerateClick}
                 disabled={isLoading}
               >

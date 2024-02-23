@@ -68,7 +68,7 @@ function ImageModal({ handleModalShow }) {
 
             <div className="w-full px-2 mt-4 text-center">
               <div
-                className="flex w-full h-fit px-4  item-center bg-gradient-to-r from-blue-500 to-teal-400  rounded-3xl  py-1  text-center"
+                className="flex w-full h-fit px-4  item-center bg-gradient-to-r from-blue-700 to-teal-400  rounded-3xl  py-1  text-center"
                 onClick={SelectedgalleryImage}
               >
                 <p className="  text-center w-full text-base py-1">

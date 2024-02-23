@@ -26,7 +26,7 @@ function ImageSearch() {
                 visually compelling way.
               </p>
               <div className="py-4 w-full">
-                <button className="w-full py-3 text-base sm:text-[18px] bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 text-center rounded-[50px] mt-3 cursor-pointer ">
+                <button className="w-full py-3 text-base sm:text-[18px] bg-gradient-to-r from-blue-700 to-teal-400 bg-slate-600 text-center rounded-[50px] mt-3 cursor-pointer ">
                   Generate Images
                 </button>
               </div>

@@ -81,7 +81,7 @@ function BuyMore() {
               className="w-full flex flex-col justify-start items-center"
               onClick={handlebuyclick}
             >
-              <button className="px-10 py-2 bg-gradient-to-r w-full mt-4 from-blue-500 to-teal-400 bg-slate-600 text-center rounded-[50px]  cursor-pointer">
+              <button className="px-10 py-2 bg-gradient-to-r w-full mt-4 from-blue-700 to-teal-400 bg-slate-600 text-center rounded-[50px]  cursor-pointer">
                 Buy
               </button>
               <div className="w-full   mt-2 flex justify-center gap-2">

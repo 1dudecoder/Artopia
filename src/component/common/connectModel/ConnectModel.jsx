@@ -61,7 +61,7 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                     <div className="">
                       <p
                         onClick={connectToMetaMask}
-                        className="px-10 py-2 bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600  text-center rounded-[50px] mt-3 cursor-pointer"
+                        className="px-10 py-2 bg-gradient-to-r from-blue-700 to-teal-400 bg-slate-600  text-center rounded-[50px] mt-3 cursor-pointer"
                       >
                         Connect Metamask
                       </p>
@@ -79,7 +79,7 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                       account
                     </p>
                     <div className="">
-                      <p className="px-10 py-2 bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 text-center rounded-[50px] mt-3 cursor-pointer">
+                      <p className="px-10 py-2 bg-gradient-to-r from-blue-700 to-teal-400 bg-slate-600 text-center rounded-[50px] mt-3 cursor-pointer">
                         <p
                           className="text-[18px] "
                           onClick={() => {
@@ -176,7 +176,7 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                         <img src={metamaskicon} alt="metamask-img" />
                         <p className="text-3xl py-2">MetaMask</p>
                         <div
-                          className="bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 w-full py-2 px-20 lg:px-32 text-center rounded-[50px] mt-4 "
+                          className="bg-gradient-to-r from-blue-700 to-teal-400 bg-slate-600 w-full py-2 px-20 lg:px-32 text-center rounded-[50px] mt-4 "
                           onClick={connectToMetaMask}
                         >
                           Connect
@@ -191,7 +191,7 @@ const ConnectModel = ({ isOpen, onClose, connectToMetaMask, walletStatus }) => {
                         <img src={walletMob} alt="wallet-mob-img" />
                         <p className="text-3xl py-2">Wallet Connect</p>
                         <div
-                          className="bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 w-full py-2 px-20 lg:px-32 text-center rounded-[50px] mt-4"
+                          className="bg-gradient-to-r from-blue-700 to-teal-400 bg-slate-600 w-full py-2 px-20 lg:px-32 text-center rounded-[50px] mt-4"
                           onClick={() => {
                             navigate("/dashboard");
                           }}

@@ -24,6 +24,7 @@ import TextToImage from "../TextToImage/TextToImage";
 import { useSelector, useDispatch } from "react-redux";
 import ImagetoImage from "../Imagetotext/ImagetoText";
 import BuyMore from "../buymore/BuyMore";
+import Profile from "../profile/Profile";
 
 function Dasboard() {
   const location = useLocation();
@@ -56,6 +57,10 @@ function Dasboard() {
 
     if (location.pathname == "/buymore") {
       return <BuyMore />;
+    }
+
+    if (location.pathname == "/profile") {
+      return <Profile />;
     }
   }
 
@@ -172,7 +177,12 @@ function Dasboard() {
             <div className="text-white  mt-5 sm:mt-6  text-start">
               <p className="text-[#9E9E9E] text-base mt-3">More Option</p>
               <div className="flex flex-col">
-                <div className="flex justify-start mt-5">
+                <div
+                  className="flex justify-start mt-5"
+                  onClick={() => {
+                    handleNavigate("/profile");
+                  }}
+                >
                   <ImageButton
                     icon={profileicon}
                     text={"Profile"}

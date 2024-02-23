@@ -79,7 +79,7 @@ function WalletConnect() {
                     </p>
 
                     <div
-                      className=" cursor-pointer bg-gradient-to-r from-blue-500 to-teal-400 bg-slate-600 w-full py-4 px-20 lg:px-32 text-center rounded-[50px] mt-6"
+                      className=" cursor-pointer bg-gradient-to-r from-blue-700 to-teal-400 bg-slate-600 w-full py-4 px-20 lg:px-32 text-center rounded-[50px] mt-6"
                       onClick={handlewalletModal}
                     >
                       <p className="text-nowrap">Connect Wallet</p>
@@ -87,7 +87,6 @@ function WalletConnect() {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
 

@@ -14,6 +14,7 @@ function App() {
           <Route path="/texttoimage" element={<Dasboard />} />
           <Route path="/imagetoimage" element={<Dasboard />} />
           <Route path="/buymore" element={<Dasboard />} />
+          <Route path="/profile" element={<Dasboard />} />
         </Routes>
       </BrowserRouter>
     </div>
