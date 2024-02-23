@@ -10,16 +10,15 @@ function ImageGrid() {
 
   const fetchImages = async () => {
     try {
-      const numImages = 10;
-      const responses = await Promise.all(
-        Array.from({ length: numImages }, () =>
-          fetch("https://api.thecatapi.com/v1/images/search")
-        )
+      const numImages = 50;
+      const response = await fetch(
+        `https://pixabay.com/api/?key=41766090-be8a885a44c7857557522ec5b&q=nature&image_type=photo&per_page=${numImages}`
       );
-      const data = await Promise.all(
-        responses.map((response) => response.json())
-      );
-      const urls = data.map((cat) => cat[0].url);
+      if (!response.ok) {
+        throw new Error("Failed to fetch images");
+      }
+      const data = await response.json();
+      const urls = data.hits.map((image) => image.previewURL);
       setImageUrls(urls);
     } catch (error) {
       console.error("Error fetching images:", error);
@@ -34,7 +33,7 @@ function ImageGrid() {
             <img src={zoomin} alt="Zoom In" className=" h-[24px]" />
           </div>
           <img
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto w-full rounded-lg"
             src={imageUrl}
             alt={`Image ${index + 1}`}
           />

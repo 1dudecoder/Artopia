@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import {
   artopialogo,
   dashhide,
@@ -33,6 +33,7 @@ function Dasboard() {
   const anymodal = useSelector((state) => state.dashboarddata.data.anymodal);
 
   const [barHide, setBarHide] = useState(false);
+  const ref = useRef(null);
 
   const handleNavigate = useCallback((navr) => {
     navigate(`${navr}`);
@@ -68,9 +69,27 @@ function Dasboard() {
     setBarHide(!barHide);
   };
 
+  useEffect(() => {
+    if (barHide == true) {
+      const handleClickOutside = (event) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+          handledashbar(!barHide);
+        }
+      };
+
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }
+  }, [ref, barHide]);
+
   const SidebarItem = () => {
     return (
-      <div className="flex flex-col justify-between h-full items-center py-4 px-2 ">
+      <div
+        className="flex flex-col justify-between h-full items-center py-4 px-2 "
+        ref={ref}
+      >
         <div className="flex flex-col ">
           <div className="flex justify-center ">
             <div className="flex justify-between item-center  w-full">
@@ -239,11 +258,14 @@ function Dasboard() {
 
   return (
     <>
-      <div className="h-screen w-screen bg-custom-gradient flex font-HindMadurai ">
-        <div className="hidden sm:flex w-[250px]  justify-end bg-[#5d5d5d26]  backdrop-filter backdrop-blur-sm pl-6 border-e-[0.2px] border-[#f4f4f447]">
+      <div className="h-screen w-screen bg-custom-gradient flex font-HindMadurai  backdrop-filter">
+        {barHide && (
+          <div className="w-screen h-screen absolute bg-blur-sm bg-[#1d0e0e9f] bg-blur-md z-10"></div>
+        )}
+        <div className="hidden  sm:flex w-[250px]  justify-end bg-[#5d5d5d26]  backdrop-filter backdrop-blur-sm pl-6 border-e-[0.2px] border-[#f4f4f447]">
           <SidebarItem />
         </div>
-        <div className="flex sm:hidden backdrop-filter backdrop-blur-sm z-10 ">
+        <div className="flex sm:hidden backdrop-filter backdrop-blur-sm z-20 ">
           <div
             className={`flex z-10 bg-custom-gradient h-full absolute transition-transform duration-300 justify-center items-center ${
               barHide
@@ -255,7 +277,7 @@ function Dasboard() {
           </div>
         </div>
 
-        <div className="w-[100%] relative h-full text-white  overflow-auto font-HindMadurai">
+        <div className="w-[100%] relative h-full text-white  overflow-auto font-HindMadurai  ">
           {!anymodal && (
             <div className="flex sm:hidden w-full justify-between   py-3 px-2">
               <div className="flex justify-center items-center ">
