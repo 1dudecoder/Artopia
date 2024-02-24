@@ -1,0 +1,14 @@
+.blur-on-hover:hover {
+  filter: blur(3px);
+}
+
+.text-ellipsis_new {
+  max-height: 7em; /* Approximate height of three lines */
+  line-height: 1.5em; /* Adjust line height as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+

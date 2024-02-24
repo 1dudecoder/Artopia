@@ -1,21 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import GallaryCompo from "../../common/gallaryCompo/GallaryCompo.jsx";
 import { remove } from "../../../assets";
 import { useNavigate } from "react-router-dom";
+import { anymodal } from "../../../features/reducers/dashboardSlice.js";
+import { useDispatch } from "react-redux";
 
-function ImageModal({ handleModalShow }) {
+function ImageModal({ handleModalShow, imagemodal }) {
   const [selectedImage, setselectedImage] = useState(0);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSlideChange = (data, index) => {
     setselectedImage(data);
   };
 
   const SelectedgalleryImage = () => {
-    console.log("hellow--->", selectedImage);
+    dispatch(anymodal(!imagemodal));
     navigate("/texttoimage", { state: { navyes: true, selectedImage } });
   };
+
+  useEffect(() => {
+    const modalContent = document.getElementById("modalContent");
+    modalContent.scrollTop = 0;
+  });
 
   return (
     <div className="w-full h-screen mt-4 absolute bg-blur backdrop-blur-md top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 bg-blue flex justify-center items-center overflow-scroll">
@@ -27,7 +35,17 @@ function ImageModal({ handleModalShow }) {
           <img src={remove} alt="" className="h-5" />
         </div>
 
-        <div className="w-full h-full min-[1000px]:p-4 flex font-popin justify-between max-[1000px]:items-center flex-row  max-[1000px]:flex-col-reverse overflow-scroll">
+        <div
+          id="modalContent"
+          className="w-full h-full min-[1000px]:p-4 flex font-popin justify-between max-[1000px]:items-center flex-row-reverse  max-[1000px]:flex-col overflow-scroll"
+        >
+          <div className="w-[80%] min-[1000px]:w-[60%] h-full  ml-3 mx-5">
+            <GallaryCompo
+              setselectedImage={setselectedImage}
+              handleSlideChange={handleSlideChange}
+            />
+          </div>
+
           <div className="flex flex-col  min-[1000px]:w-[40%] pr-2 max-[1000px]:mt-20 min-[1000px]:mr-10 ">
             <div className="mr-4 w-full ">
               <p className="text-[18px]">Prompt</p>
@@ -47,7 +65,6 @@ function ImageModal({ handleModalShow }) {
                   faintly illuminated in the distant background epic cinematic
                   BG, hyper detail and hyper quality, hyper detail equipment,
                   8k, Accurate Animal...
-                  {/* Anatomy, Enchant Color, Dynamic Lighting */}
                 </p>
               </div>
             </div>
@@ -61,7 +78,6 @@ function ImageModal({ handleModalShow }) {
                   faintly illuminated in the distant background epic cinematic
                   BG, hyper detail and hyper quality, hyper detail equipment,
                   8k, Accurate Animal...
-                  {/* Anatomy, Enchant Color, Dynamic Lighting */}
                 </p>
               </div>
             </div>
@@ -76,13 +92,6 @@ function ImageModal({ handleModalShow }) {
                 </p>
               </div>
             </div>
-          </div>
-
-          <div className="w-[80%] min-[1000px]:w-[60%] h-full  ml-3 mx-5">
-            <GallaryCompo
-              setselectedImage={setselectedImage}
-              handleSlideChange={handleSlideChange}
-            />
           </div>
         </div>
       </div>

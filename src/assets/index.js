@@ -62,7 +62,11 @@ import exchangeicon from "../assets/profile/exchange-icon.svg";
 import deleteconformicon from "../assets/profile/delete-conform.svg";
 import successconformicon from "../assets/profile/success-conform.svg";
 
+//dashboard grid icons
 
+import brownicon from "../assets/dashboardgrid/brown-icon.svg";
+import iicon from "../assets/dashboardgrid/i_icon.svg";
+import downloadicon from "../assets/dashboardgrid/download-icon.svg";
 
 export {
   catimg,
@@ -113,5 +117,8 @@ export {
   depositicon,
   exchangeicon,
   deleteconformicon,
-  successconformicon
+  successconformicon,
+  brownicon,
+  iicon,
+  downloadicon,
 };

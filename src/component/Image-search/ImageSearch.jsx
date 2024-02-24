@@ -2,6 +2,7 @@ import React from "react";
 import { downarrow, imggen } from "../../assets";
 import ImageGrid from "../common/imageGrid/ImageGrid";
 import { useNavigate } from "react-router-dom";
+import DashboadGrid from "../common/dashbordGrid/DashboardGrid";
 
 function ImageSearch() {
   const navigate = useNavigate();
@@ -45,8 +46,8 @@ function ImageSearch() {
             </div>
           </div>
 
-          <div>
-            <ImageGrid />
+          <div className="">
+            <DashboadGrid />
           </div>
         </div>
       </div>

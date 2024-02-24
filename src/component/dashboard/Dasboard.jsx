@@ -37,6 +37,7 @@ function Dasboard() {
 
   const handleNavigate = useCallback((navr) => {
     navigate(`${navr}`);
+    setBarHide(false);
   }, []);
 
   function handledashboard() {
@@ -124,7 +125,7 @@ function Dasboard() {
                   <div
                     class="px-2 py-1 rounded-full bg-[#000000ac]"
                     onClick={() => {
-                      navigate("/buymore");
+                      handleNavigate("/buymore");
                     }}
                   >
                     <p class="text-sm font-popin">Buy More</p>

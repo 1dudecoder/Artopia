@@ -256,7 +256,7 @@ function Profile() {
         <>
           <div className="w-full flex justify-center items-center  lg:w-4/5 text-nowrap">
             <div className="h-full w-full p-4 lg:p-10 rounded-xl border-2 border-[#95929223] bg-[#95929223] flex lg:w-5/6 justify-start items-start flex-col ">
-              <div className="flex justify-start flex-col items-start py-4 ">
+              <div className="flex justify-start flex-col items-start py-4 sm:py-0 ">
                 <p className="text-sm">Current Balance: </p>
                 <div className="flex flex-row justify-start items-center  ">
                   <img
