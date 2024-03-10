@@ -5,13 +5,14 @@ import ImageModal from "../common/imagemodal/ImageModal";
 
 function History() {
   const [imagemodal, setImageModal] = useState(false);
+
   const handleImageModal = () => {
     setImageModal(!imagemodal);
   };
 
   return (
-    <>
-      <div className="sm:px-10 sm:py-6 px-4 text-white w-full h-full">
+    <div className="w-full h-screen flex flex-row min-[1000px]:flex-col  ">
+      <div className="sm:px-10 sm:py-6 px-4 text-white w-full h-full  overflow-scroll">
         <p className="text-[20px] font-bold hidden sm:flex">History</p>
 
         <div className="mt-4 md:mt-10 flex justify-between w-full flex-col lg:flex-row ">
@@ -55,19 +56,19 @@ function History() {
         </div>
 
         <div className=" h-full mt-10  w-full">
-          <ImageGrid />
+          <ImageGrid handleImageModal={handleImageModal} />
         </div>
       </div>
 
       {imagemodal && (
-        <div className=" w-full h-screen absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 flex justify-center items-center">
+        <div className="w-full h-screen absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 flex justify-center items-center">
           <ImageModal
             handleModalShow={handleImageModal}
             imagemodal={imagemodal}
           />
         </div>
       )}
-    </>
+    </div>
   );
 }
 

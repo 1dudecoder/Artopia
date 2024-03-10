@@ -25,7 +25,7 @@ function ImagetoImage() {
   return (
     <div className="w-full h-screen flex flex-row min-[1000px]:flex-col relative  overflow-hidden">
       <div className="h-screen  overflow-scroll px-2 w-full">
-        <div className="flex flex-col   min-[665px]:flex min-[665px]:flex-row min-[665px]:justify-between min-[665px]:items-center pt-5 sm:px-8">
+        <div className="flex flex-col min-[665px]:flex min-[665px]:flex-row min-[665px]:justify-between min-[665px]:items-center pt-5 sm:px-8">
           <div>
             <p className="">AI Image Generation</p>
           </div>

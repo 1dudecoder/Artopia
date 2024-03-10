@@ -26,7 +26,7 @@ function ImageModal({ handleModalShow, imagemodal }) {
   });
 
   return (
-    <div className="w-full h-screen mt-4 absolute bg-blur backdrop-blur-md top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 bg-blue flex justify-center items-center overflow-scroll">
+    <div className="w-full h-screen pt-4 absolute bg-blur backdrop-blur-md top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 bg-blue flex justify-center items-center overflow-scroll">
       <div className="h-full overflow-scroll max-w-[95%] max-h-[95%] bg-[#2f2e2e] rounded-2xl  p-2 relative">
         <div
           className="flex justify-end absolute w-full  items-end pt-2 pr-6"
