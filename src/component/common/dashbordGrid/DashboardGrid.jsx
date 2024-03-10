@@ -37,7 +37,7 @@ function DashboadGrid() {
 
           <img
             className="h-full w-full rounded-lg transition object-cover duration-200 ease-in-out transform  blur-on-hover"
-            src={myimg.upscaledUrls[0].imageUrl}
+            src={myimg.upscaledUrls[0]?.imageUrl}
             alt={`Image ${index}`}
           />
         </div>

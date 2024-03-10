@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { remove, uploadicon, viewallicon } from "../../../assets";
 import { useSelector } from "react-redux";
+import DragandDrop from "../dragandDrop/DragandDrop";
 
 function ImageUpload({ handleUploadModal }) {
   const [uploadImage, setUploadImage] = useState(true);
@@ -36,7 +37,7 @@ function ImageUpload({ handleUploadModal }) {
       </div>
       <div className="flex flex-col  item-center text-center w-full px-4 h-full justify-evenly ">
         <div>
-          <p className="text-2xl font-bold">Image Uplaod</p>
+          <p className="text-2xl font-bold">Image Upload</p>
           <p className="text-sm py-2 text-[#9E9E9E]">
             upload the file to generate the AI Image with the image rederence
           </p>
@@ -84,18 +85,7 @@ function ImageUpload({ handleUploadModal }) {
         <div className="w-[95%] mt-2  h-[0.1px] bg-[#ffffff41] flex place-self-center"></div>
 
         {uploadImage && (
-          <div className="flex justify-center item-center h-[130px] flex-col  py-3 w-full rounded-xl border-[#ffffff2b] border-[1px] bg-[#ffffff14]">
-            <div className="h-full w-full flex justify-center items-center ">
-              <img src={uploadicon} alt="upload-icon" className="h-10" />
-            </div>
-            <div className="flex w-full justify-center items-center my-1">
-              <p className="font-bold pr-2">Click to upload</p>
-              <p>or drag and drop</p>
-            </div>
-            <p className="text-center text-base">
-              SVG, PNG, JPG or GIF (max. 1024x1024px)
-            </p>
-          </div>
+          <DragandDrop myclass="py-4" vectorstyle="" text="Click to upload" />
         )}
 
         {recentImage && (

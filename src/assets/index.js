@@ -68,6 +68,10 @@ import brownicon from "../assets/dashboardgrid/brown-icon.svg";
 import iicon from "../assets/dashboardgrid/i_icon.svg";
 import downloadicon from "../assets/dashboardgrid/download-icon.svg";
 
+//upload file
+
+import uploadfileicon from "../assets/uploadfile/upload-icon.svg";
+
 export {
   catimg,
   artopialogo,
@@ -121,4 +125,5 @@ export {
   brownicon,
   iicon,
   downloadicon,
+  uploadfileicon,
 };

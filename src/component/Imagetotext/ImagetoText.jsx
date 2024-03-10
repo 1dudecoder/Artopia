@@ -67,10 +67,10 @@ function ImagetoImage() {
 
       {imagemodal && (
         <div className=" w-full h-screen absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 flex justify-center items-center">
-          <ImageModal
-            handleModalShow={handleImageModal}
-            imagemodal={imagemodal}
-          />
+        <ImageModal
+        handleModalShow={handleImageModal}
+        imagemodal={imagemodal}
+        />
         </div>
       )}
 

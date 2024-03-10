@@ -49,12 +49,12 @@ function BuyMore() {
                 className="w-full bg-transparent outline-none p-2"
               />
 
-              <div className="flex gap-2 hidden sm:flex justify-center items-center w-[25%] h-[70%] rounded-md  border-2 border-[#ffffff1c] bg-[#ffffff1a] ">
-                <img src={backspinner} alt="back-spinner" className="h-4" />
-                <p className="text-sm text-center text-[#ffffffbe]">Bloom</p>
+              <div className="flex gap-2 hidden sm:flex   justify-center items-center w-[25%] h-[70%] rounded-md  border-2 border-[#ffffff1c] bg-[#ffffff1a] ">
+                <img src={usdticon} alt="back-spinner" className="h-4" />
+                <p className="text-sm text-center text-[#ffffffbe]">USDT</p>
+                <img src={backdownarrow} alt="back-spinner" className="" />
               </div>
             </div>
-
             <div className="sm:p-4 border-[#ffffff26] flex justify-center  w-full place-self-center">
               <img
                 src={downicon}
@@ -70,10 +70,9 @@ function BuyMore() {
                 className="w-full bg-transparent outline-none p-2"
               />
 
-              <div className="flex gap-2 hidden sm:flex   justify-center items-center w-[25%] h-[70%] rounded-md  border-2 border-[#ffffff1c] bg-[#ffffff1a] ">
-                <img src={usdticon} alt="back-spinner" className="h-4" />
-                <p className="text-sm text-center text-[#ffffffbe]">USDT</p>
-                <img src={backdownarrow} alt="back-spinner" className="" />
+              <div className="flex gap-2 hidden sm:flex justify-center items-center w-[25%] h-[70%] rounded-md  border-2 border-[#ffffff1c] bg-[#ffffff1a] ">
+                <img src={backspinner} alt="back-spinner" className="h-4" />
+                <p className="text-sm text-center text-[#ffffffbe]">Bloom</p>
               </div>
             </div>
 
