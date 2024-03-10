@@ -10,5 +10,25 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  width: fit;
 }
 
+.text-ellipsis_test {
+  max-height: 10em; /* Approximate height of three lines */
+  line-height: 1.5em; /* Adjust line height as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  text-wrap: wrap;
+}
+
+.text-ellipsis_url {
+  line-height: 2em; /* Adjust line height as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}

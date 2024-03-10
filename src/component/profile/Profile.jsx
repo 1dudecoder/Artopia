@@ -13,6 +13,7 @@ import {
   uploadpofile,
 } from "../../assets";
 import { useNavigate } from "react-router-dom";
+import DragandDrop from "../common/dragandDrop/DragandDrop";
 
 function Profile() {
   const navigate = useNavigate();
@@ -101,15 +102,12 @@ function Profile() {
             <div className="flex flex-col justify-start w-full ">
               <div className="flex flex-col justify-start">
                 <p className="text-[#ffffffaf] text-xl">Avatar</p>
-                <div className="flex justify-center items-center border-[0.2px] border-[#7470706c] text-nowrap px-32 mt-2 rounded-2xl py-10 md:py-16 flex-col bg-[#7470701a]">
-                  <img src={uploadpofile} alt="upload-icon" />
-                  <p className="font-bold text-base mt-2">
-                    Click to upload avatar
-                  </p>
-                  <p className="text-[9px] mt-1">
-                    SVG, PNG, JPG or GIF (max. 1024x1024px)
-                  </p>
-                </div>
+
+                <DragandDrop
+                  myclass="py-10"
+                  vectorstyle=""
+                  text="Click to upload avatar"
+                />
               </div>
 
               <div className="flex flex-col justify-start mt-4">

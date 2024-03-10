@@ -4,7 +4,7 @@ import ImageGrid from "../common/imageGrid/ImageGrid";
 import ImageModal from "../common/imagemodal/ImageModal";
 
 function History() {
-  const [imagemodal, setImageModal] = useState(true);
+  const [imagemodal, setImageModal] = useState(false);
   const handleImageModal = () => {
     setImageModal(!imagemodal);
   };
