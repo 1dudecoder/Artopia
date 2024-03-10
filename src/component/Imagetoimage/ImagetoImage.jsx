@@ -5,6 +5,11 @@ import ImageModal from "../common/imagemodal/ImageModal";
 import ImageUpload from "../common/imageUpload/ImageUpload";
 import { useDispatch } from "react-redux";
 import { anymodal } from "../../features/reducers/dashboardSlice";
+import { getImagetoImage } from "../../features/reducers/clickedImagetoImageSlice";
+import {
+  db_artopia_history,
+  db_old_images_dashboard,
+} from "../../db/artopiadb";
 
 function ImagetoImage() {
   const [imagemodal, setImageModal] = useState(false);
@@ -12,8 +17,13 @@ function ImagetoImage() {
 
   const dispatch = useDispatch();
 
-  const handleImageModal = () => {
-    dispatch(anymodal(!imagemodal));
+  const handleImageModal = (clickimageid) => {
+    let ccitem = db_artopia_history.filter((item) => {
+      if (item.id == clickimageid) {
+        return item;
+      }
+    });
+    dispatch(getImagetoImage(ccitem));
     setImageModal(!imagemodal);
   };
 
@@ -40,10 +50,7 @@ function ImagetoImage() {
 
         <div className="mt-6 flex justify-start sm:px-8">
           <div className=" flex justify-start">
-            <div
-              className="flex flex-nowrap justify-center h-fit px-4  item-center bg-gradient-to-r from-blue-700 to-teal-400  rounded-3xl  py-2"
-              onClick={handleImageModal}
-            >
+            <div className="flex flex-nowrap justify-center h-fit px-4  item-center bg-gradient-to-r from-blue-700 to-teal-400  rounded-3xl  py-2">
               <img src={crownicon} alt="loading-text" className="flex px-1" />
               <p className="text-sm text-nowrap">Generated Image</p>
             </div>
@@ -61,16 +68,17 @@ function ImagetoImage() {
         </div>
 
         <div className="mt-8 sm:px-8">
-          <ImageGrid />
+          <ImageGrid handleImageModal={handleImageModal} />
         </div>
       </div>
 
       {imagemodal && (
         <div className=" w-full h-screen absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 flex justify-center items-center">
-        <ImageModal
-        handleModalShow={handleImageModal}
-        imagemodal={imagemodal}
-        />
+          <ImageModal
+            handleModalShow={handleImageModal}
+            imagemodal={imagemodal}
+            clickedby={"imagetoimage"}
+          />
         </div>
       )}
 

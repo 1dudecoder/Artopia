@@ -3,7 +3,7 @@ import { remove, uploadicon, viewallicon } from "../../../assets";
 import { useSelector } from "react-redux";
 import DragandDrop from "../dragandDrop/DragandDrop";
 
-function ImageUpload({ handleUploadModal }) {
+function ImageUpload({ handleUploadModal,clickedby }) {
   const [uploadImage, setUploadImage] = useState(true);
   const [recentImage, setRecentImage] = useState(false);
   const [urlImage, setUrlImage] = useState(false);

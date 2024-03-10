@@ -3,16 +3,20 @@ import GallaryCompo from "../../common/gallaryCompo/GallaryCompo.jsx";
 import { remove } from "../../../assets";
 import { useNavigate } from "react-router-dom";
 import { anymodal } from "../../../features/reducers/dashboardSlice.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-function ImageModal({ handleModalShow, imagemodal }) {
+function ImageModal({ handleModalShow, imagemodal, clickedby }) {
   const [selectedImage, setselectedImage] = useState(0);
+  const [clickedImageData, setclickedImageData] = useState();
+  let itidata = useSelector((state) => state.ITIdata.ITIclickdata);
+
+  console.log(itidata, "itidata--->");
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleSlideChange = (data, index) => {
-    setselectedImage(data);
+    // setselectedImage(data);
   };
 
   const SelectedgalleryImage = () => {
@@ -25,12 +29,27 @@ function ImageModal({ handleModalShow, imagemodal }) {
     modalContent.scrollTop = 0;
   });
 
+  useEffect(() => {
+    if (clickedby == "imagetoimage") {
+      if (itidata) {
+        // setselectedImage(itidata);
+        setclickedImageData(itidata);
+      }
+    }
+
+    if (clickedby == "texttoimage") {
+      // setselectedImage(itidata);
+    }
+  }, []);
+
   return (
     <div className="w-full h-screen pt-4 absolute bg-blur backdrop-blur-md top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 bg-blue flex justify-center items-center overflow-scroll">
-      <div className="h-full overflow-scroll max-w-[95%] max-h-[95%] bg-[#2f2e2e] rounded-2xl  p-2 relative">
+      <div className="h-full w-full overflow-scroll max-w-[95%] max-h-[95%] bg-[#2f2e2e] rounded-2xl  p-2 relative">
         <div
           className="flex justify-end absolute w-full  items-end pt-2 pr-6"
-          onClick={handleModalShow}
+          onClick={() => {
+            handleModalShow();
+          }}
         >
           <img src={remove} alt="" className="h-5" />
         </div>
@@ -43,6 +62,7 @@ function ImageModal({ handleModalShow, imagemodal }) {
             <GallaryCompo
               setselectedImage={setselectedImage}
               handleSlideChange={handleSlideChange}
+              clickedImageData={clickedImageData}
             />
           </div>
 
@@ -59,12 +79,7 @@ function ImageModal({ handleModalShow, imagemodal }) {
                   </p>
                 </div>
                 <p className="text-[13px] text-ellipsis py-2">
-                  A (((draconic creature))) soaring through the vast expanse of
-                  space, with (((twinkling stars))), (((glowing
-                  constellations)), and (the eight planets of our solar system)
-                  faintly illuminated in the distant background epic cinematic
-                  BG, hyper detail and hyper quality, hyper detail equipment,
-                  8k, Accurate Animal...
+                  {clickedImageData && clickedImageData[0]?.prompt}
                 </p>
               </div>
             </div>
@@ -72,12 +87,7 @@ function ImageModal({ handleModalShow, imagemodal }) {
               <p className="text-[18px]">Back Story</p>
               <div className="bg-blur backdrop-blur-sm bg-[#ffffff20] py-1 px-2 mt-4 rounded-md w-full">
                 <p className="text-[13px] text-ellipsis py-2">
-                  A (((draconic creature))) soaring through the vast expanse of
-                  space, with (((twinkling stars))), (((glowing
-                  constellations)), and (the eight planets of our solar system)
-                  faintly illuminated in the distant background epic cinematic
-                  BG, hyper detail and hyper quality, hyper detail equipment,
-                  8k, Accurate Animal...
+                  {clickedImageData && clickedImageData[0]?.backstory_prompt}
                 </p>
               </div>
             </div>

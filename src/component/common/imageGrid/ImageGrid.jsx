@@ -12,7 +12,9 @@ function ImageGrid({ handleImageModal }) {
               src={zoomin}
               alt="Zoom In"
               className=" h-[24px]"
-              onClick={handleImageModal}
+              onClick={() => {
+                handleImageModal(imageUrl.id)
+              }}
             />
           </div>
           <img

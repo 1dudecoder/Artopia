@@ -22,7 +22,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import History from "../historyCompo/History";
 import TextToImage from "../TextToImage/TextToImage";
 import { useSelector, useDispatch } from "react-redux";
-import ImagetoImage from "../Imagetotext/ImagetoText";
+import ImagetoImage from "../Imagetoimage/ImagetoImage.jsx";
 import BuyMore from "../buymore/BuyMore";
 import Profile from "../profile/Profile";
 
