@@ -70,23 +70,24 @@ function ImageModal({ handleModalShow, imagemodal, clickedby }) {
             <div className="mr-4 w-full ">
               <p className="text-[18px]">Prompt</p>
               <div className="bg-blur backdrop-blur-sm bg-[#ffffff20] py-1 px-2 mt-4 rounded-md w-full">
-                <div className="flex text-base font-popin py-2 w-full">
-                  <p className="p-2 bg-[#2445EE] rounded-l-md text-base">
+                <div className="flex text-base font-popin py-2 w-full ">
+                  <p className="px-2 bg-[#2445EE] rounded-l-md text-base text-nowrap flex justify-center items-center">
                     Img Url:
                   </p>
-                  <p className="p-2 bg-blur backdrop-blur-sm bg-[#ffffff20] rounded-r-md text-base">
-                    Dragon of the seas.png
+                  <p className=" px-2 w-fit bg-blur backdrop-blur-sm bg-[#ffffff20] rounded-r-md  text-[13px] text-ellipsis-url  ">
+                    {clickedImageData && clickedImageData[0]?.url}
                   </p>
                 </div>
-                <p className="text-[13px] text-ellipsis py-2">
-                  {clickedImageData && clickedImageData[0]?.prompt}
+
+                <p className="text-[13px] text-ellipsis-test min-h-20">
+                  {clickedImageData && clickedImageData[0]?.prompt}{" "}
                 </p>
               </div>
             </div>
             <div className=" mr-4 w-full mt-6">
               <p className="text-[18px]">Back Story</p>
               <div className="bg-blur backdrop-blur-sm bg-[#ffffff20] py-1 px-2 mt-4 rounded-md w-full">
-                <p className="text-[13px] text-ellipsis py-2">
+                <p className="text-[13px] text-ellipsis-test min-h-20">
                   {clickedImageData && clickedImageData[0]?.backstory_prompt}
                 </p>
               </div>
