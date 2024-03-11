@@ -2,11 +2,23 @@ import React, { useState } from "react";
 import { downarrow, searchicon } from "../../assets";
 import ImageGrid from "../common/imageGrid/ImageGrid";
 import ImageModal from "../common/imagemodal/ImageModal";
+import { db_artopia_history } from "../../db/artopiadb";
+import { useDispatch } from "react-redux";
+import { getHistoryImage } from "../../features/reducers/clickedHistoryImageSlice";
 
 function History() {
   const [imagemodal, setImageModal] = useState(false);
+  const dispatch = useDispatch();
 
-  const handleImageModal = () => {
+  const handleImageModal = (clickimageid) => {
+    console.log(clickimageid, "clickimageid--->");
+    let ccitem = db_artopia_history.filter((item) => {
+      if (item.id == clickimageid) {
+        return item;
+      }
+    });
+    dispatch(getHistoryImage(ccitem));
+
     setImageModal(!imagemodal);
   };
 
@@ -65,6 +77,7 @@ function History() {
           <ImageModal
             handleModalShow={handleImageModal}
             imagemodal={imagemodal}
+            clickedby={"historyimage"}
           />
         </div>
       )}

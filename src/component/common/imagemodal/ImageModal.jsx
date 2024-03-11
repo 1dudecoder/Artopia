@@ -8,15 +8,19 @@ import { useDispatch, useSelector } from "react-redux";
 function ImageModal({ handleModalShow, imagemodal, clickedby }) {
   const [selectedImage, setselectedImage] = useState(0);
   const [clickedImageData, setclickedImageData] = useState();
-  let itidata = useSelector((state) => state.ITIdata.ITIclickdata);
 
-  console.log(itidata, "itidata--->");
+  let itidata = useSelector((state) => state.ITIdata.ITIclickdata);
+  let historydata = useSelector(
+    (state) => state.historyimageclicked.historyimagedata
+  );
+
+  console.log(historydata, itidata, "itidata--->");
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleSlideChange = (data, index) => {
-    // setselectedImage(data);
+    setselectedImage(data);
   };
 
   const SelectedgalleryImage = () => {
@@ -32,13 +36,14 @@ function ImageModal({ handleModalShow, imagemodal, clickedby }) {
   useEffect(() => {
     if (clickedby == "imagetoimage") {
       if (itidata) {
-        // setselectedImage(itidata);
         setclickedImageData(itidata);
       }
     }
 
-    if (clickedby == "texttoimage") {
-      // setselectedImage(itidata);
+    if (clickedby == "historyimage") {
+      if (historydata) {
+        setclickedImageData(historydata);
+      }
     }
   }, []);
 
@@ -51,7 +56,7 @@ function ImageModal({ handleModalShow, imagemodal, clickedby }) {
             handleModalShow();
           }}
         >
-          <img src={remove} alt="" className="h-5" />
+          <img src={remove} alt="" className="h-5 px-4" />
         </div>
 
         <div
@@ -74,8 +79,24 @@ function ImageModal({ handleModalShow, imagemodal, clickedby }) {
                   <p className="px-2 bg-[#2445EE] rounded-l-md text-base text-nowrap flex justify-center items-center">
                     Img Url:
                   </p>
-                  <p className=" px-2 w-fit bg-blur backdrop-blur-sm bg-[#ffffff20] rounded-r-md  text-[13px] text-ellipsis-url  ">
-                    {clickedImageData && clickedImageData[0]?.url}
+                  <p className="w-full px-2 bg-blur backdrop-blur-sm bg-[#ffffff20] rounded-r-md  text-[13px] text-ellipsis-url  ">
+                    {/* {`
+                      ${clickedImageData && clickedImageData[0]?.url}
+                   `} */}
+
+                    {/* https://images.unsplash.com/photo-1708623460319
+                    -3f1d8865778a?w=500&auto=format&fit=crop&q=60&ixlib=
+                    rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8 */}
+
+                    https://imagineapi/4a2da0ba-3726-4e6e-a8cf-04d6f5ce5bb4/4a2da0ba-3726-4e6e-a8cf-04d6f5ce5bb4.png
+                    {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+                    beatae atque minus in, dolores culpa repudiandae optio
+                    ducimus. Explicabo, quibusdam! Nostrum deserunt corporis
+                    pariatur odit provident adipisci, molestias fugit quasi
+                    doloribus similique cupiditate reprehenderit reiciendis ex,
+                    consectetur distinctio doloremque velit. Quis cupiditate
+                    nulla laudantium. Voluptatem et architecto consequuntur
+                    praesentium est. */}
                   </p>
                 </div>
 

@@ -25,7 +25,7 @@
 }
 
 .text-ellipsis-url {
-  max-height: 7em; /* Approximate height of three lines */
+  max-height: 10em;
   line-height: 3em; /* Adjust line height as needed */
   overflow: hidden;
   text-overflow: ellipsis;
