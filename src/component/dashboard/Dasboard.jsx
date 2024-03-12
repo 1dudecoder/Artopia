@@ -25,20 +25,77 @@ import { useSelector, useDispatch } from "react-redux";
 import ImagetoImage from "../Imagetoimage/ImagetoImage.jsx";
 import BuyMore from "../buymore/BuyMore";
 import Profile from "../profile/Profile";
+import { getwallet } from "../../features/reducers/walletSlice.js";
+import { truncateText } from "../../utils/index.js";
 
 function Dasboard() {
   const location = useLocation();
   const navigate = useNavigate();
-  const walletdata = useSelector((state) => state.walletData.data);
+  const walletdata = useSelector((state) => state.walletData?.data.payload);
   const anymodal = useSelector((state) => state.dashboarddata.data.anymodal);
 
+  const dispatch = useDispatch();
   const [barHide, setBarHide] = useState(false);
   const ref = useRef(null);
+  const [currentAccount, setCurrentAccount] = useState("");
 
   const handleNavigate = useCallback((navr) => {
     navigate(`${navr}`);
     setBarHide(false);
   }, []);
+
+  useEffect(() => {
+    if (!walletdata?.address) {
+      navigate("/");
+    }
+  }, [walletdata]);
+
+  useEffect(() => {
+    if (barHide == true) {
+      const handleClickOutside = (event) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+          handledashbar(!barHide);
+        }
+      };
+
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }
+  }, [ref, barHide]);
+
+  useEffect(() => {
+    checkIfAccountChanged();
+  }, [currentAccount]);
+
+  const checkIfAccountChanged = async () => {
+    try {
+      const { ethereum } = window;
+      ethereum.on("accountsChanged", (accounts) => {
+        if (accounts.length === 0) {
+          console.log("wallet disconnected--->");
+          dispatch(getwallet([]));
+          navigate("/");
+        } else {
+          let data = {
+            name: "nitin negi",
+            address: accounts[0],
+          };
+          dispatch(getwallet(data));
+          console.log("Account changed to:", accounts, accounts.length);
+          setCurrentAccount(accounts[0]);
+        }
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const logouthandle = async () => {
+    dispatch(getwallet([]));
+    console.log("logout sucess -->");
+  };
 
   function handledashboard() {
     if (location.pathname == "/dashboard") {
@@ -69,21 +126,6 @@ function Dasboard() {
   const handledashbar = () => {
     setBarHide(!barHide);
   };
-
-  useEffect(() => {
-    if (barHide == true) {
-      const handleClickOutside = (event) => {
-        if (ref.current && !ref.current.contains(event.target)) {
-          handledashbar(!barHide);
-        }
-      };
-
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }
-  }, [ref, barHide]);
 
   const SidebarItem = () => {
     return (
@@ -230,19 +272,21 @@ function Dasboard() {
               <img src={girlimg} alt="girl-img" className="h-auto w-auto" />
 
               <div className="ml-4">
-                <p className="text-[16px]">Justin Barboe</p>
+                <p className="text-[16px]">{walletdata?.name}</p>
 
                 <div className="flex pr-4">
                   <img src={walleticon} alt="wallet-icon" />
-                  <p className="pl-2 text-[12px] text-ellipsis w-full">
-                    0x168v3712g...
+                  <p className="pl-2  w-[100px] overflow-hidden text-[12px] ">
+                    {truncateText(walletdata?.address, 6, 3)}
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="flex justify-start w-full mt-2">
-              <p className="text-[#E33629] mr-2 text-sm">Disconnect</p>
+            <div className="flex justify-start w-full mt-2 items-center">
+              <p className="text-[#E33629] mr-2 text-sm" onClick={logouthandle}>
+                Disconnect
+              </p>
               <div>
                 <img
                   src={disconnecticon}

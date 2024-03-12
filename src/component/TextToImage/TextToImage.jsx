@@ -15,8 +15,6 @@ function TextToImage(props) {
 
   const { navyes = false, selectedImage = null } = state || {};
 
-  console.log(location, navyes, selectedImage, "selectedImage-->");
-
   const [isLoading, setIsLoading] = useState(false);
   const [gridchange, setGridChange] = useState(true);
   const [inputdataflag, setInputdataFlag] = useState(false);

@@ -17,9 +17,14 @@ function WalletConnect() {
 
   async function connectToMetaMask() {
     try {
-      await window.ethereum.request({ method: "eth_requestAccounts" });
+
+      await window.ethereum.request({
+        method: "wallet_requestPermissions",
+        params: [{ eth_accounts: {} }],
+      });
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
+
       const connectedAddress = await signer.getAddress();
       setAddress(connectedAddress);
       setConnected(true);
@@ -29,13 +34,14 @@ function WalletConnect() {
         name: "bob",
         address: connectedAddress,
       };
+      console.log(data, "walletdata-->");
       dispatch(getwallet(data));
+      
     } catch (error) {
       setError("Failed to connect to MetaMask.");
       setConnected(false);
     }
   }
-
   const handlewalletModal = () => {
     setOpenWalletModal(!openWalletModal);
   };
