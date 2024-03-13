@@ -8,7 +8,7 @@ import "./DashboardGrid.css";
 
 function DashboadGrid() {
   return (
-    <div className="w-full h-full z-0 flex flex-row justify-between overflow-x-auto gap-5">
+    <div className="w-full pb-4  h-full z-0 flex flex-row justify-between overflow-x-auto gap-5">
       {db_old_images_dashboard.map((myimg, index) => (
         <div
           key={index}

@@ -12,8 +12,8 @@ function ImageSearch() {
   };
 
   return (
-    <div>
-      <div className="w-[100%]  text-white  overflow-auto font-HindMadurai ">
+    <div className="overflow-scroll h-screen ">
+      <div className="w-[100%] pb-10 text-white  overflow-auto font-HindMadurai ">
         <div className="m-4">
           <p className="font-bold ">Image Generation</p>
 
@@ -46,7 +46,7 @@ function ImageSearch() {
             </div>
           </div>
 
-          <div className="">
+          <div className="pb-2">
             <DashboadGrid />
           </div>
         </div>
