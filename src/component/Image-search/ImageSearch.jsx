@@ -13,7 +13,7 @@ function ImageSearch() {
 
   return (
     <div className="overflow-scroll h-screen ">
-      <div className="w-[100%] pb-10 text-white  overflow-auto font-HindMadurai ">
+      <div className="w-[100%]  pb-4 sm:pb-0 text-white  overflow-auto font-HindMadurai ">
         <div className="m-4">
           <p className="font-bold ">Image Generation</p>
 
