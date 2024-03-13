@@ -322,7 +322,7 @@ function Dasboard() {
           </div>
         </div>
 
-        <div className="w-[100%] relative h-full text-white  overflow-auto font-HindMadurai  ">
+        <div className="w-[100%] relative h-full text-white  overflow-hidden font-HindMadurai  ">
           {!anymodal && (
             <div className="flex sm:hidden w-full justify-between   py-3 px-2">
               <div className="flex justify-center items-center ">
