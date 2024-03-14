@@ -23,7 +23,7 @@ function History() {
   };
 
   return (
-    <div className="w-full h-screen flex flex-row min-[1000px]:flex-col  ">
+    <div className="w-full h-screen flex flex-row min-[1000px]:flex-col  overflow-hidden">
       <div className="sm:px-10 sm:py-6 px-4 text-white w-full h-full  overflow-scroll">
         <p className="text-[20px] font-bold hidden sm:flex">History</p>
 
