@@ -4,7 +4,7 @@ import { db_artopia_history } from "../../../db/artopiadb";
 
 function ImageGrid({ handleImageModal }) {
   return (
-    <div className="w-full mb-10 gap-5 columns-2 sm:columns-2 2xl:columns-4 lg:columns-3 md:columns-2 space-y-3 pb-20">
+    <div className="w-full  gap-5 columns-2 sm:columns-2 2xl:columns-4 lg:columns-3 md:columns-2 space-y-3 pb-20 md:pb-2">
       {db_artopia_history.map((imageUrl, index) => (
         <div key={index} className="group relative flex justify-center">
           <div className="absolute flex items-end justify-end w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2">

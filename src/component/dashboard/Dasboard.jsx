@@ -305,7 +305,7 @@ function Dasboard() {
     <>
       <div className="h-screen w-screen bg-custom-gradient flex font-HindMadurai  backdrop-filter">
         {barHide && (
-          <div className="w-screen h-screen absolute bg-blur-sm bg-[#1d0e0e9f] bg-blur-md z-10"></div>
+          <div className="w-screen h-screen absolute bg-blur-sm bg-[#0204029c] bg-blur-md z-10"></div>
         )}
         <div className="hidden  sm:flex w-[250px]  justify-end bg-[#5d5d5d26]  backdrop-filter backdrop-blur-sm pl-6 border-e-[0.2px] border-[#f4f4f447]">
           <SidebarItem />
